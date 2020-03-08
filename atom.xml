@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-08T05:52:04.971Z</updated>
+    <updated>2020-03-08T05:57:06.104Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -10,6 +10,79 @@
     <logo>https://9u46-mx.github.io/images/avatar.png</logo>
     <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
+    <entry>
+        <title type="html"><![CDATA[【模板】读入/输出优化]]></title>
+        <id>https://9u46-mx.github.io/post/mo-ban-du-ru-shu-chu-you-hua/</id>
+        <link href="https://9u46-mx.github.io/post/mo-ban-du-ru-shu-chu-you-hua/">
+        </link>
+        <updated>2020-03-08T05:53:13.000Z</updated>
+        <content type="html"><![CDATA[<p>会根据需要不断强化功能。</p>
+<pre><code class="language-cpp"># ifndef IO_by_9u46_MX
+# define IO_by_9u46_MX
+
+# ifndef cctype_by_9u46_MX
+# define cctype_by_9u46_MX
+# include &lt;cctype&gt;
+# endif
+# ifndef cstdarg_by_9u46_MX
+# define cstdarg_by_9u46_MX
+# include &lt;cstdarg&gt;
+# endif
+# ifndef cstdio_by_9u46_MX
+# define cstdio_by_9u46_MX
+# include &lt;cstdio&gt;
+# endif
+namespace MX {
+    namespace IO {
+        typedef long long unsigned int LLU;
+        void const inline _enter(); void const inline _space(); void const inline _nothing();
+        void const (*enter)()(_enter), (*space)()(_space), (*nothing)()(_nothing);
+        template&lt;typename T&gt; T inline read(); template&lt;typename T&gt; T inline read(T&amp;);
+        template&lt;typename T&gt; void const inline write(T, void const (*)() = nothing);
+        template&lt;typename T&gt; void const inline write(void const (*)(), LLU, ...);
+
+        void const inline _enter() { putchar('\n'); }
+        void const inline _space() { putchar(' '); }
+        void const inline _nothing() {}
+        template&lt;typename T&gt;
+        T inline read() {
+            signed char t;
+            short signed int m(1);
+            while (not isdigit(t = getchar())) if (t == '-') m = -m;
+            T r(0);
+            while (r = r * 10 + (t - '0') * m, isdigit(t = getchar()));
+            return r;
+        }
+        template&lt;typename T&gt;
+        T inline read(T&amp; a) {
+            signed char t;
+            short signed int m(1);
+            while (not isdigit(t = getchar())) if (t == '-') m = -m;
+            a = 0;
+            while (a = a * 10 + (t - '0') * m, isdigit(t = getchar()));
+            return a;
+        }
+        template&lt;typename T&gt;
+        void const inline write(T a, void const (*space)()) {
+            signed char s[20]; short unsigned int l(0);
+            while (s[l++] = a % 10 + '0', a /= 10);
+            while (l) putchar(s[--l]);
+            space();
+        }
+        template&lt;typename T&gt;
+        void const inline write(void const (*space)(), LLU count, ...) {
+            va_list list;
+            va_start(list, count);
+            for (LLU register i(0); i &lt; count; ++i) write(va_arg(list, T), space);
+            va_end(list);
+        }
+    }
+}
+
+# endif
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://9u46-mx.github.io/post/hello-gridea/</id>
