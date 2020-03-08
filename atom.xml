@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-08T05:57:06.104Z</updated>
+    <updated>2020-03-08T10:43:09.607Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
     <entry>
         <title type="html"><![CDATA[【模板】读入/输出优化]]></title>
-        <id>https://9u46-mx.github.io/post/mo-ban-du-ru-shu-chu-you-hua/</id>
-        <link href="https://9u46-mx.github.io/post/mo-ban-du-ru-shu-chu-you-hua/">
+        <id>https://9u46-mx.github.io/post/Template-IO/</id>
+        <link href="https://9u46-mx.github.io/post/Template-IO/">
         </link>
         <updated>2020-03-08T05:53:13.000Z</updated>
         <content type="html"><![CDATA[<p>会根据需要不断强化功能。</p>
