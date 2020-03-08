@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-08T10:44:40.714Z</updated>
+    <updated>2020-03-08T10:56:16.179Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -10,6 +10,94 @@
     <logo>https://9u46-mx.github.io/images/avatar.png</logo>
     <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
+    <entry>
+        <title type="html"><![CDATA[【题解】洛谷 P6194]]></title>
+        <id>https://9u46-mx.github.io/post/Solution-luogu-P6198/</id>
+        <link href="https://9u46-mx.github.io/post/Solution-luogu-P6198/">
+        </link>
+        <updated>2020-03-08T10:50:03.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="洛谷3月月赛苏联人">【洛谷3月月赛】苏联人</h2>
+<p>一道很水的模拟。存完图之后对每个非空的点进行搜索。<br>
+时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>8</mn><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(8^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
+<pre><code class="language-cpp"># ifndef cstdio_by_9u46_MX
+# define cstdio_by_9u46_MX
+# include &lt;cstdio&gt;
+# endif
+
+namespace Soviets {
+    signed char inline gc() {
+        signed char t;
+        while (t = getchar(), t != '.' &amp;&amp; t != 'R' &amp;&amp; t != 'B');
+        return t;
+    }
+    void const inline pc(bool const b) {
+        putchar(b ? '1' : '0');
+    }
+    signed char Chess_Set[8][8];
+    bool ans[8][8];
+
+    void const inline begin() {
+        for (short unsigned int register i(0); i &lt; 8; ++i)
+            for (short unsigned int register j(0); j &lt; 8; ++j)
+                ans[i][j] = (Chess_Set[i][j] = gc()) == '.';
+    }
+    void const inline end() {
+        for (short unsigned int register i(0); i &lt; 8; ++i) {
+            for (short unsigned int register j(0); j &lt; 8; ++j)
+                pc(ans[i][j]);
+            putchar('\n');
+        }
+    }
+
+    void const inline work(short unsigned int const x, short unsigned int const y) {
+        switch (Chess_Set[x][y]) {
+        case 'R':
+            for (short signed int register i(x - 1); i &gt;= 0 and Chess_Set[i][y] == '.'; --i) ans[i][y] = false;
+            for (short signed int register i(x + 1); i &lt; 8 and Chess_Set[i][y] == '.'; ++i) ans[i][y] = false;
+            for (short signed int register i(y - 1); i &gt;= 0 and Chess_Set[x][i] == '.'; --i) ans[x][i] = false;
+            for (short signed int register i(y + 1); i &lt; 8 and Chess_Set[x][i] == '.'; ++i) ans[x][i] = false;
+            break;
+        case 'B':
+            for (
+                short signed int register i(x - 1), j(y - 1);
+                i &gt;= 0 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
+                --i, --j
+            ) ans[i][j] = false;
+            for (
+                short signed int register i(x - 1), j(y + 1);
+                i &gt;= 0 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
+                --i, ++j
+            ) ans[i][j] = false;
+            for (
+                short signed int register i(x + 1), j(y - 1);
+                i &lt; 8 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
+                ++i, --j
+            ) ans[i][j] = false;
+            for (
+                short signed int register i(x + 1), j(y + 1);
+                i &lt; 8 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
+                ++i, ++j
+            ) ans[i][j] = false;
+            break;
+        }
+    }
+
+    void const inline MAIN() {
+        begin();
+        for (short unsigned int register i(0); i &lt; 8; ++i)
+            for (short unsigned int register j(0); j &lt; 8; ++j)
+                if (Chess_Set[i][j] not_eq '.') work(i, j);
+        end();
+    }
+}
+
+signed int main() {
+    Soviets::MAIN();
+    return 0;
+}
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【模板】读入/输出优化]]></title>
         <id>https://9u46-mx.github.io/post/Template-IO/</id>
