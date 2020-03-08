@@ -7,7 +7,7 @@
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
 <title>【模板】读入/输出优化 | 9u46 的小窝</title>
-<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1583678740713">
+<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1583678769641">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -445,23 +445,27 @@ namespace MX {
 </div>
               
                 
-<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
-<div id="vcomments" style="padding: 10px 0px 0px 0px"></div>
+                  
+                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
 <script>
-new Valine({
-    el: '#vcomments' ,
-    appId: '',
-    appKey: '',
-    notify: 'true' === 'false', 
-    avatar:'', 
-    placeholder: '',
-    pageSize: '',
-    lang: 'zh-cn',
-    visitor: 'true' === 'true',
-    highlight: 'true' === 'true',
-    avatarForce: 'true' === 'false',
-});
+  var gitalk = new Gitalk({
+    clientID: '2c4f4217806e95c9000f',
+    clientSecret: 'ddfe6425f56b696f22eb9a114a518d73c07695f6',
+    repo: 'comment',
+    owner: '9u46-MX',
+    admin: ['9u46-MX'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
 </script>
+                  
+                  
+                
               
             </div>
           </div>
