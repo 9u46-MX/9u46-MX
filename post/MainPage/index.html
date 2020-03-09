@@ -1,22 +1,583 @@
-<?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
-    <id>https://9u46-mx.github.io/</id>
-    <title>9u46 的小窝</title>
-    <updated>2020-03-09T02:04:22.295Z</updated>
-    <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="https://9u46-mx.github.io/"/>
-    <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
-    <subtitle>by 9u46.</subtitle>
-    <logo>https://9u46-mx.github.io/images/avatar.png</logo>
-    <icon>https://9u46-mx.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2020, 9u46 的小窝</rights>
-    <entry>
-        <title type="html"><![CDATA[个人主页]]></title>
-        <id>https://9u46-mx.github.io/post/MainPage/</id>
-        <link href="https://9u46-mx.github.io/post/MainPage/">
-        </link>
-        <updated>2020-03-09T02:00:59.000Z</updated>
-        <content type="html"><![CDATA[<p><strong>update: 2020-03-09</strong></p>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<meta name="keywords" content="Gridea静态个人博客">
+<meta name="description" content="by 9u46.">
+<meta name="theme-color" content="#000">
+<title>个人主页 | 9u46 的小窝</title>
+<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1583719297726">
+<link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
+
+<link rel="stylesheet" href="/media/css/gemini.css">
+
+<link rel="stylesheet" href="/media/fonts/font-awesome.css">
+<link href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Rosario:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+
+<link href="/media/hljs/styles/androidstudio.css" rel="stylesheet">  
+
+<script src="/media/hljs/highlight.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/velocity-animate@1.5.0/velocity.ui.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/+DiW/UqRcLbRjq" crossorigin="anonymous">
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l+B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd+qj+o24G5ZU2zJz" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+    onload="renderMathInElement(document.body);"></script>
+
+    <meta name="description" content="个人主页" />
+    <meta name="keywords" content="主页" />
+  </head>
+  <body>
+    <div class="head-top-line"></div>
+    <div class="header-box">
+      
+<div class=" gemini">
+  <header class="header bg-color ">
+    <div class="blog-header box-shadow-wrapper bg-color " id="header">
+      <div class="nav-toggle" id="nav_toggle">
+        <div class="toggle-box">
+          <div class="line line-top"></div>
+          <div class="line line-center"></div>
+          <div class="line line-bottom"></div>
+        </div>
+      </div>
+      <div class="site-meta">       
+        <div class="site-title">
+          
+            <a href="/" class="brand">
+              <span>9u46 的小窝</span>
+            </a>  
+          
+        </div>
+        
+          <p class="subtitle">by 9u46.</p>
+        
+      </div>
+      <nav class="site-nav" id="site_nav">
+        <ul id="nav_ul">
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/" target="_self">
+                  <i class="fa fa-home"></i> 首页
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/archives" target="_self">
+                  <i class="fa fa-archive"></i> 归档
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/tags" target="_self">
+                  <i class="fa fa-tags"></i> 标签
+                </a>
+              
+            </li>
+          
+            <li class="nav-item ">
+              
+              
+                <a href="/post/about" target="_self">
+                  <i class="fa fa-user"></i> 关于
+                </a>
+              
+            </li>
+          
+          <li class="nav-item">
+            <a>
+              <i class="fa fa-search"></i> 搜索
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+</div>
+
+<script type="text/javascript"> 
+ 
+  let showNav = true;
+
+  let navToggle = document.querySelector('#nav_toggle'),
+  siteNav = document.querySelector('#site_nav');
+  
+  function navClick() {
+    let sideBar = document.querySelector('.sidebar');
+    let navUl = document.querySelector('#nav_ul');
+    navToggle.classList.toggle('nav-toggle-active');
+    siteNav.classList.toggle('nav-menu-active');
+    if (siteNav.classList.contains('nav-menu-active')) {
+      siteNav.style = "height: " + (navUl.children.length * 42) +"px !important";
+    } else {
+      siteNav.style = "";
+    }
+  }
+
+  navToggle.addEventListener('click',navClick);  
+</script>
+    </div>
+    <div class="main-continer">
+      
+      <div class="section-layout gemini ">
+        <div class="section-layout-wrapper">
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            <div class="post-side-meta" id="post_side_meta">
+              
+<div class="sidebar-wrapper box-shadow-wrapper bg-color">
+  <div class="sidebar-item">
+    <img class="site-author-image right-motion" src="https://9u46-mx.github.io//images/avatar.png"/>
+    <p class="site-author-name">9u46 的小窝</p>
+    <p class="site-description right-motion">珂愛。求关注。求互挂友链。有意者请洛谷私信。</p>
+  </div>
+  <div class="sidebar-item side-item-stat right-motion">
+    <div class="sidebar-item-box">
+      <a href="/archives/">
+        
+        <span class="site-item-stat-count">5</span>
+        <span class="site-item-stat-name">文章</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="">
+        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-name">分类</span>
+      </a>
+    </div>
+    <div class="sidebar-item-box">
+      <a href="/tags/">
+        <span class="site-item-stat-count">4</span>
+        <span class="site-item-stat-name">标签</span>
+      </a>
+    </div>
+  </div>
+  
+    
+      <div class="sidebar-item">
+        <span class="site-item-rss">
+            <i class="fa fa-rss"></i>
+            <a href="https://9u46-mx.github.io//atom.xml" target="_blank">RSS</a>
+        </span>
+      </div>
+    
+  
+  
+
+
+  <div class="sidebar-item right-motion sidebar-item-friends">
+    <p class="friends-title"><i class="fa fa-globe"></i> 友链</p>
+    <div class="friends-box">
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/236807">【9u46的洛谷账号】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/321004">【小号】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/blog/Kaguya-Houraisan/">【洛谷博客】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/paste/9g3tm515">【老师们】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/paste/2fwimcwv">【同机房dalao们】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/234074">【刚发现的同城小姐姐！】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/33165">【MF姐姐！】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/91204">【灵姐姐！】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/189012">【AKER小哥哥（雾】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/267364">【烁金哥哥！】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/80358">【Rem姐姐！】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/222117">【Zhang？】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/297675">【虚空者……哥哥？】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/114320">【connect小姐姐！】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/111016">【Var1ous姐姐！】</a>
+        </p>
+      
+        <p>
+          <a href="https://www.luogu.com.cn/user/185438">【银……哥哥！】</a>
+        </p>
+      
+    </div>
+  </div>
+
+</div>
+            </div>
+            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
+              <div class="toc-box right-motion">
+  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
+    <ul class="markdownIt-TOC">
+<li>
+<ul>
+<li>
+<ul>
+<li><a href="#%E5%A4%A7%E4%BA%8B%E7%A5%AD">大事祭</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+  </div>
+</div>
+
+<script>
+
+let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
+let active = 'active-show', activeClass = 'active-current';
+let tocWrapper = document.querySelector('#toc_wrapper');
+let tocContent = tocWrapper.children[0];
+let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
+
+function addTocNumber(elem, deep) {
+  if (!elem) {
+    return;
+  }
+  let prop = elem.__proto__;
+
+  if (prop === HTMLUListElement.prototype) {
+    for (let i = 0; i < elem.children.length; i++) {
+      addTocNumber(elem.children[i], deep + (i + 1) + '.');
+    }
+  } else if (prop === HTMLLIElement.prototype) {
+    // 保存li元素
+    lList.push(elem);
+    for (let i = 0; i < elem.children.length; i++) {
+      let cur = elem.children[i];
+      if (cur.__proto__ === HTMLAnchorElement.prototype) {
+        if (autoNumber) {
+          cur.text =  deep + ' ' + cur.text;
+        }
+      } else if (cur.__proto__ === HTMLUListElement.prototype) {
+        addTocNumber(cur, deep);
+      }
+    }
+  }
+}
+
+
+document.addEventListener('scroll', function(e) {
+  if (lList.length <= 0) {
+    return;
+  }
+  let scrollTop = document.scrollingElement.scrollTop + 10;
+  let dir;
+
+  if (lastTop - scrollTop > 0) {
+    dir = 'up';
+  } else {
+    dir = 'down';
+  }
+
+  lastTop = scrollTop;
+  if (scrollTop <= 0) {
+    if (lastIndex >= 0 && lastIndex < hList.length) {
+      lList[lastIndex].classList.remove(activeClass);
+    }
+    return;
+  }
+
+  let current = 0, hasFind = false;
+  for (let i = 0; i < hList.length; i++) {
+    if (hList[i].offsetTop > scrollTop) {
+      current = i;
+      hasFind = true;
+      break;
+    }
+  }
+  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
+    current = hList.length - 1;
+  } else {
+    current--;
+  }
+  if (dir === 'down') {
+    if (current > lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex) 
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  } else {
+    if (current < lastIndex) {
+      addActiveClass(current);
+      removeActiveClass(lastIndex);
+      lastIndex = current;
+      removeParentActiveClass();
+      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
+    }
+  }
+});
+
+function removeParentActiveClass() {
+  let parents = tocContent.querySelectorAll('.'+active)
+  parents.forEach(function(elem) {
+    elem.classList.remove(active);
+  });
+}
+
+function addActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.add(activeClass);
+  }
+}
+
+function removeActiveClass(index) {
+  if (index >= 0 && index < hList.length) {
+    lList[index].classList.remove(activeClass);
+  }
+}
+
+function addActiveLiElemment(elem, parent) {
+  if (!elem || elem === parent) {
+    return;
+  } else {
+    if (elem.__proto__ === HTMLLIElement.prototype) {
+      elem.classList.add(active);
+    }
+    addActiveLiElemment(elem.parentElement, parent);
+  }
+}
+
+function showToc() {
+  if (tocWrapper) {
+    postBody = document.querySelector('#post_body');
+    for (let i = 0; i < postBody.children.length; i++) {
+      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
+        hList.push(postBody.children[i]);
+      }
+    }
+    if (tocWrapper.classList.contains('compress')) {
+        tocContent.classList.add('closed');
+    } else if (tocWrapper.classList.contains('no_compress')){
+      tocContent.classList.add('expanded');
+    } else {
+      if (hList.length > 10) {
+        active = 'active-hidden'
+        tocContent.classList.add('closed');
+      } else {
+        tocContent.classList.add('expanded');
+      }
+    }
+  }
+}
+addTocNumber(tocContent, '');
+
+window.addEventListener('load', function() {
+  showToc();
+  document.querySelector('#sidebar').style='display: block;';
+  tocWrapper.classList.add('toc-active');
+  setTimeout(function() {
+    if ("createEvent" in document) {
+      let evt = document.createEvent("HTMLEvents");
+      evt.initEvent("scroll", false, true);
+      document.dispatchEvent(evt);
+    }
+    else {
+      document.fireEvent("scroll");
+    }
+  }, 500)
+})
+
+</script>
+            </div>
+          
+        
+      </div>
+    </div>
+  
+</div>
+<script>
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
+      }
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
+  }
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://9u46-mx.github.io/post/MainPage/">
+      个人主页
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+      <span class="meta-item">
+        <i class="fa fa-thumb-tack"></i>
+        <span>置顶</span>
+        <span class="post-meta-divider">|</span>
+      </span>
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-03-09</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://9u46-mx.github.io/tag/WGgrhCCzA/">
+              <span>主页</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>2分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>388<span class="pc-show">字数</span></span>
+    </span>
+    
+      <span id="/post/MainPage/" class="meta-item pc-show leancloud_visitors">
+        <span class="post-meta-divider">|</span>
+        <i class="fa fa-eye"></i>
+        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
+      </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <p><strong>update: 2020-03-09</strong></p>
 <p><a href="https://9u46-MX.github.io"><strong>刚搭建好的github博客主页qwq</strong></a>（求互挂友链，请私信qwq</p>
 <p>这个人很菜，就在 1s 前还什么都没写。</p>
 <p>这个人是 @<a href="95736"><strong>9u46</strong></a> 的小号，也是 @<a href="321004"><strong>9u46_MX</strong></a> 的大号。目前是 @<a href="95736"><strong>9u46</strong></a> 主要使用的账号。</p>
@@ -52,319 +613,227 @@
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">CSP2019</mi><mo>⁡</mo><mi>J</mi></mrow><annotation encoding="application/x-tex">\operatorname{CSP2019}J</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">C</span><span class="mord mathrm">S</span><span class="mord mathrm">P</span><span class="mord mathrm">2</span><span class="mord mathrm">0</span><span class="mord mathrm">1</span><span class="mord mathrm">9</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.09618em;">J</span></span></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>340</mn><mi mathvariant="normal">pts</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">340\operatorname{pts}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">3</span><span class="mord">4</span><span class="mord">0</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">p</span><span class="mord mathrm">t</span><span class="mord mathrm">s</span></span></span></span></span> 一等（全省第一）祭。</p>
 <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi mathvariant="normal">CSP2019</mi><mo>⁡</mo><mi>S</mi></mrow><annotation encoding="application/x-tex">\operatorname{CSP2019}S</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mop"><span class="mord mathrm">C</span><span class="mord mathrm">S</span><span class="mord mathrm">P</span><span class="mord mathrm">2</span><span class="mord mathrm">0</span><span class="mord mathrm">1</span><span class="mord mathrm">9</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05764em;">S</span></span></span></span>：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>288</mn><mi mathvariant="normal">pts</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">288\operatorname{pts}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8388800000000001em;vertical-align:-0.19444em;"></span><span class="mord">2</span><span class="mord">8</span><span class="mord">8</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">p</span><span class="mord mathrm">t</span><span class="mord mathrm">s</span></span></span></span></span> 一等（全省第二十）祭。</p>
 <p>2020-03-08 三月月赛 div1 ranking 卡进前五十（rank49）祭。</p>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【题解】洛谷 P6195]]></title>
-        <id>https://9u46-mx.github.io/post/Solution-luogu-P6195/</id>
-        <link href="https://9u46-mx.github.io/post/Solution-luogu-P6195/">
-        </link>
-        <updated>2020-03-08T10:58:22.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="洛谷3月月赛迫害">【洛谷3月月赛】迫害</h2>
-<p>题意简述：<br>
-你有 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 张面值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的钞票和 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 张支票。你可以在支票上任意填写数字。要使最后可以拼出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">[</mo><mn>1</mn><mo separator="true">,</mo><mi>k</mi><mo fence="true">]</mo></mrow><annotation encoding="application/x-tex">\left[1, k\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mclose delimcenter" style="top:0em;">]</span></span></span></span></span> 中所有的钱数。求 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi></mrow><annotation encoding="application/x-tex">k</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span></span></span></span> 最大是多少。<br>
-显然，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>⩾</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">k \geqslant n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.83111em;vertical-align:-0.13667em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel amsrm">⩾</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span>，因为你可以用 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi></mrow><annotation encoding="application/x-tex">n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">n</span></span></span></span> 张面值为 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>1</mn></mrow><annotation encoding="application/x-tex">1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span> 的钞票拼出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">[</mo><mn>1</mn><mo separator="true">,</mo><mi>n</mi><mo fence="true">]</mo></mrow><annotation encoding="application/x-tex">\left[1, n\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mclose delimcenter" style="top:0em;">]</span></span></span></span></span> 中所有的钱数。<br>
-但你拼不出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。所以如果你有支票，你必须在一张支票上填上 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">n + 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>；而填上后，你就可以拼出 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo fence="true">[</mo><mn>1</mn><mo separator="true">,</mo><mn>2</mn><mi>n</mi><mo>+</mo><mn>1</mn><mo fence="true">]</mo></mrow><annotation encoding="application/x-tex">\left[1, 2n + 1\right]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">[</span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">2</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;">]</span></span></span></span></span> 中所有的钱数了。<br>
-重复这一过程，你会发现：假设你重复了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>x</mi></mrow><annotation encoding="application/x-tex">x</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">x</span></span></span></span> 次，则 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><msup><mn>2</mn><mi>x</mi></msup><mrow><mo fence="true">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo fence="true">)</mo></mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 2^x\left(n + 1\right) - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">x</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。而你一共重复了 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi></mrow><annotation encoding="application/x-tex">m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span> 次，故 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo>=</mo><msup><mn>2</mn><mi>m</mi></msup><mrow><mo fence="true">(</mo><mi>n</mi><mo>+</mo><mn>1</mn><mo fence="true">)</mo></mrow><mo>−</mo><mn>1</mn></mrow><annotation encoding="application/x-tex">k = 2^m\left(n + 1\right) - 1</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord"><span class="mord">2</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.664392em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">m</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="minner"><span class="mopen delimcenter" style="top:0em;">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mord">1</span><span class="mclose delimcenter" style="top:0em;">)</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">1</span></span></span></span>。</p>
-<pre><code class="language-cpp"># ifndef IO_by_9u46_MX
-# define IO_by_9u46_MX
 
-# ifndef cctype_by_9u46_MX
-# define cctype_by_9u46_MX
-# include &lt;cctype&gt;
-# endif
-# ifndef cstdarg_by_9u46_MX
-# define cstdarg_by_9u46_MX
-# include &lt;cstdarg&gt;
-# endif
-# ifndef cstdio_by_9u46_MX
-# define cstdio_by_9u46_MX
-# include &lt;cstdio&gt;
-# endif
-namespace MX {
-    namespace IO {
-        typedef long long unsigned int LLU;
-        void const inline _enter(); void const inline _space(); void const inline _nothing();
-        void const (*enter)()(_enter), (*space)()(_space), (*nothing)()(_nothing);
-        template&lt;typename T&gt; T inline read(); template&lt;typename T&gt; T inline read(T&amp;);
-        template&lt;typename T&gt; void const inline write(T, void const (*)() = nothing);
-        template&lt;typename T&gt; void const inline write(void const (*)(), LLU, ...);
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      9u46 的小窝
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://9u46-mx.github.io/post/MainPage/" title="个人主页">个人主页</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://9u46-mx.github.io/tag/WGgrhCCzA/"># 主页</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
+      
+    </div>
+    <div class="nav-next">
+      
+        <a class="nav-pc-next" title="【题解】洛谷 P6195" href="https://9u46-mx.github.io/post/Solution-luogu-P6195/">【题解】洛谷 P6195</a>
+        <a class="nav-mobile-next" title="【题解】洛谷 P6195" href="https://9u46-mx.github.io/post/Solution-luogu-P6195/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
+      
+    </div>
+  </div>
+</div>
+              
+                
+                  
+                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
 
-        void const inline _enter() { putchar('\n'); }
-        void const inline _space() { putchar(' '); }
-        void const inline _nothing() {}
-        template&lt;typename T&gt;
-        T inline read() {
-            signed char t;
-            short signed int m(1);
-            while (not isdigit(t = getchar())) if (t == '-') m = -m;
-            T r(0);
-            while (r = r * 10 + (t - '0') * m, isdigit(t = getchar()));
-            return r;
-        }
-        template&lt;typename T&gt;
-        T inline read(T&amp; a) {
-            signed char t;
-            short signed int m(1);
-            while (not isdigit(t = getchar())) if (t == '-') m = -m;
-            a = 0;
-            while (a = a * 10 + (t - '0') * m, isdigit(t = getchar()));
-            return a;
-        }
-        template&lt;typename T&gt;
-        void const inline write(T a, void const (*space)()) {
-            signed char s[20]; short unsigned int l(0);
-            while (s[l++] = a % 10 + '0', a /= 10);
-            while (l) putchar(s[--l]);
-            space();
-        }
-        template&lt;typename T&gt;
-        void const inline write(void const (*space)(), LLU count, ...) {
-            va_list list;
-            va_start(list, count);
-            for (LLU register i(0); i &lt; count; ++i) write(va_arg(list, T), space);
-            va_end(list);
-        }
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '2c4f4217806e95c9000f',
+    clientSecret: 'ddfe6425f56b696f22eb9a114a518d73c07695f6',
+    repo: 'comment',
+    owner: '9u46-MX',
+    admin: ['9u46-MX'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+                  
+                  
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-box">
+  <footer class="footer">
+    <div class="copyright">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | © 2019-2020 Theme By HsxyHao
+    </div>
+    <div class="poweredby">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a>
+    </div>
+  </footer>
+  
+  
+  <div class="gemini back-to-top" id="back_to_top">
+    <i class="fa fa-arrow-up"></i>
+    
+    <span class="scrollpercent">
+      <span id="back_to_top_text">0</span>%
+    </span>
+    
+  </div>
+  
+  
+  
+</div>
+<script>
+
+  let sideBarOpen = 'sidebar-open';
+  let body = document.body;
+  let back2Top = document.querySelector('#back_to_top'),
+  back2TopText = document.querySelector('#back_to_top_text'),
+  drawerBox = document.querySelector('#drawer_box'),
+  rightSideBar = document.querySelector('.sidebar'),
+  viewport = document.querySelector('body');
+
+  function scrollAnimation(currentY, targetY) {
+   
+    let needScrollTop = targetY - currentY
+    let _currentY = currentY
+    setTimeout(() => {
+      const dist = Math.ceil(needScrollTop / 10)
+      _currentY += dist
+      window.scrollTo(_currentY, currentY)
+      if (needScrollTop > 10 || needScrollTop < -10) {
+        scrollAnimation(_currentY, targetY)
+      } else {
+        window.scrollTo(_currentY, targetY)
+      }
+    }, 1)
+  }
+
+  back2Top.addEventListener("click", function(e) {
+    scrollAnimation(document.scrollingElement.scrollTop, 0);
+    e.stopPropagation();
+    return false;
+  });
+  
+  window.addEventListener('scroll', function(e) {
+    let percent = document.scrollingElement.scrollTop / (document.scrollingElement.scrollHeight - document.scrollingElement.clientHeight) * 100;
+    if (percent > 1 && !back2Top.classList.contains('back-top-active')) {
+      back2Top.classList.add('back-top-active');
     }
-}
-
-# endif
-
-# ifndef math_by_9u46_MX
-# define math_by_9u46_MX
-
-namespace MX {
-    typedef long long unsigned int LLU;
-    LLU inline const pow(LLU base, LLU const ex, LLU const Mod) {
-        LLU r(1);
-        for (LLU register i(0); 1 &lt;&lt; i &lt;= ex; ++i) {
-            if (ex &amp; 1 &lt;&lt; i) r = (r * base) % Mod;
-            base = (base * base) % Mod;
-        }
-        return r;
+    if (percent == 0) {
+      back2Top.classList.remove('back-top-active');
     }
-}
-
-# endif
-
-# ifndef cstdio_by_9u46_MX
-# define cstdio_by_9u46_MX
-# include &lt;cstdio&gt;
-# endif
-
-namespace Persecution {
-    using namespace MX;
-    enum Mod { Mod = 1000000007 };
-    unsigned int const n(IO::read&lt;unsigned int&gt;()), m(IO::read&lt;unsigned int&gt;());
-    void const inline begin() {}
-    void const inline end() {
-        IO::write(((n + 1) * pow(2, m, Mod) - 1) % Mod);
+    if (back2TopText) {
+      back2TopText.textContent = Math.floor(percent);
     }
+  });
 
-    void const inline MAIN() {
-        begin();
-        end();
+  
+  let hasCacu = false;
+  window.onresize = function() {
+    if (window.width > 991) {
+      calcuHeight();
+    } else {
+      hasCacu = false;
     }
-}
+  }
 
-signed int main() {
-    Persecution::MAIN();
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【题解】洛谷 P6194]]></title>
-        <id>https://9u46-mx.github.io/post/Solution-luogu-P6198/</id>
-        <link href="https://9u46-mx.github.io/post/Solution-luogu-P6198/">
-        </link>
-        <updated>2020-03-08T10:50:03.000Z</updated>
-        <content type="html"><![CDATA[<h2 id="洛谷3月月赛苏联人">【洛谷3月月赛】苏联人</h2>
-<p>一道很水的模拟。存完图之后对每个非空的点进行搜索。<br>
-时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>8</mn><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(8^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
-<pre><code class="language-cpp"># ifndef cstdio_by_9u46_MX
-# define cstdio_by_9u46_MX
-# include &lt;cstdio&gt;
-# endif
+  function calcuHeight() {
+    // 动态调整站点概览高度
+    if (!hasCacu && back2Top.classList.contains('pisces') || back2Top.classList.contains('gemini')) {
+      let sideBar = document.querySelector('.sidebar');
+      let navUl = document.querySelector('#site_nav');
+      sideBar.style = 'margin-top:' + (navUl.offsetHeight + navUl.offsetTop + 15) + 'px;';
+      hasCacu = true;
+    }
+  }
+  calcuHeight();
+  
+  let open = false, MOTION_TIME = 300, RIGHT_MOVE_DIS = '320px';
 
-namespace Soviets {
-    signed char inline gc() {
-        signed char t;
-        while (t = getchar(), t != '.' &amp;&amp; t != 'R' &amp;&amp; t != 'B');
-        return t;
-    }
-    void const inline pc(bool const b) {
-        putchar(b ? '1' : '0');
-    }
-    signed char Chess_Set[8][8];
-    bool ans[8][8];
+  if (drawerBox) {
+    let rightMotions = document.querySelectorAll('.right-motion');
+    let right = drawerBox.classList.contains('right');
 
-    void const inline begin() {
-        for (short unsigned int register i(0); i &lt; 8; ++i)
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                ans[i][j] = (Chess_Set[i][j] = gc()) == '.';
-    }
-    void const inline end() {
-        for (short unsigned int register i(0); i &lt; 8; ++i) {
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                pc(ans[i][j]);
-            putchar('\n');
-        }
-    }
+    let transitionDir = right ? "transition.slideRightIn" : "transition.slideLeftIn";
 
-    void const inline work(short unsigned int const x, short unsigned int const y) {
-        switch (Chess_Set[x][y]) {
-        case 'R':
-            for (short signed int register i(x - 1); i &gt;= 0 and Chess_Set[i][y] == '.'; --i) ans[i][y] = false;
-            for (short signed int register i(x + 1); i &lt; 8 and Chess_Set[i][y] == '.'; ++i) ans[i][y] = false;
-            for (short signed int register i(y - 1); i &gt;= 0 and Chess_Set[x][i] == '.'; --i) ans[x][i] = false;
-            for (short signed int register i(y + 1); i &lt; 8 and Chess_Set[x][i] == '.'; ++i) ans[x][i] = false;
-            break;
-        case 'B':
-            for (
-                short signed int register i(x - 1), j(y - 1);
-                i &gt;= 0 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
-                --i, --j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x - 1), j(y + 1);
-                i &gt;= 0 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
-                --i, ++j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x + 1), j(y - 1);
-                i &lt; 8 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
-                ++i, --j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x + 1), j(y + 1);
-                i &lt; 8 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
-                ++i, ++j
-            ) ans[i][j] = false;
-            break;
-        }
+    let openProp, closeProp;
+    if (right) {
+      openProp = {
+        paddingRight: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingRight: '0px'
+      };
+    } else {
+      openProp = {
+        paddingLeft: RIGHT_MOVE_DIS 
+      };
+      closeProp = {
+        paddingLeft: '0px'
+      };
     }
 
-    void const inline MAIN() {
-        begin();
-        for (short unsigned int register i(0); i &lt; 8; ++i)
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                if (Chess_Set[i][j] not_eq '.') work(i, j);
-        end();
+    drawerBox.onclick = function() {
+      open = !open;
+      window.Velocity(rightSideBar, 'stop');
+      window.Velocity(viewport, 'stop');
+      window.Velocity(rightMotions, 'stop');
+      if (open) {
+        window.Velocity(rightSideBar, {
+          width: RIGHT_MOVE_DIS
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, transitionDir,{ });
+          }
+        })
+        window.Velocity(viewport, openProp,{
+          duration: MOTION_TIME
+        });
+      } else {
+        window.Velocity(rightSideBar, {
+          width: '0px'
+        }, {
+          duration: MOTION_TIME,
+          begin: function() {
+            window.Velocity(rightMotions, {
+              opacity: 0
+            });
+          }
+        })
+        window.Velocity(viewport, closeProp ,{
+          duration: MOTION_TIME
+        });
+      }
+      for (let i = 0; i < drawerBox.children.length; i++) {
+        drawerBox.children[i].classList.toggle('muse-line');
+      }
+      drawerBox.classList.toggle(sideBarOpen);
     }
-}
+  }
 
-signed int main() {
-    Soviets::MAIN();
-    return 0;
-}
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【模板】读入/输出优化]]></title>
-        <id>https://9u46-mx.github.io/post/Template-IO/</id>
-        <link href="https://9u46-mx.github.io/post/Template-IO/">
-        </link>
-        <updated>2020-03-08T05:53:13.000Z</updated>
-        <content type="html"><![CDATA[<p>会根据需要不断强化功能。</p>
-<pre><code class="language-cpp"># ifndef IO_by_9u46_MX
-# define IO_by_9u46_MX
+  // 代码高亮
+  hljs.initHighlightingOnLoad();
 
-# ifndef cctype_by_9u46_MX
-# define cctype_by_9u46_MX
-# include &lt;cctype&gt;
-# endif
-# ifndef cstdarg_by_9u46_MX
-# define cstdarg_by_9u46_MX
-# include &lt;cstdarg&gt;
-# endif
-# ifndef cstdio_by_9u46_MX
-# define cstdio_by_9u46_MX
-# include &lt;cstdio&gt;
-# endif
-namespace MX {
-    namespace IO {
-        typedef long long unsigned int LLU;
-        void const inline _enter(); void const inline _space(); void const inline _nothing();
-        void const (*enter)()(_enter), (*space)()(_space), (*nothing)()(_nothing);
-        template&lt;typename T&gt; T inline read(); template&lt;typename T&gt; T inline read(T&amp;);
-        template&lt;typename T&gt; void const inline write(T, void const (*)() = nothing);
-        template&lt;typename T&gt; void const inline write(void const (*)(), LLU, ...);
-
-        void const inline _enter() { putchar('\n'); }
-        void const inline _space() { putchar(' '); }
-        void const inline _nothing() {}
-        template&lt;typename T&gt;
-        T inline read() {
-            signed char t;
-            short signed int m(1);
-            while (not isdigit(t = getchar())) if (t == '-') m = -m;
-            T r(0);
-            while (r = r * 10 + (t - '0') * m, isdigit(t = getchar()));
-            return r;
-        }
-        template&lt;typename T&gt;
-        T inline read(T&amp; a) {
-            signed char t;
-            short signed int m(1);
-            while (not isdigit(t = getchar())) if (t == '-') m = -m;
-            a = 0;
-            while (a = a * 10 + (t - '0') * m, isdigit(t = getchar()));
-            return a;
-        }
-        template&lt;typename T&gt;
-        void const inline write(T a, void const (*space)()) {
-            signed char s[20]; short unsigned int l(0);
-            while (s[l++] = a % 10 + '0', a /= 10);
-            while (l) putchar(s[--l]);
-            space();
-        }
-        template&lt;typename T&gt;
-        void const inline write(void const (*space)(), LLU count, ...) {
-            va_list list;
-            va_start(list, count);
-            for (LLU register i(0); i &lt; count; ++i) write(va_arg(list, T), space);
-            va_end(list);
-        }
-    }
-}
-
-# endif
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://9u46-mx.github.io/post/hello-gridea/</id>
-        <link href="https://9u46-mx.github.io/post/hello-gridea/">
-        </link>
-        <updated>2018-12-11T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-]]></content>
-    </entry>
-</feed>
+</script>
+    </div>
+  </body>
+  <script src="/media/js/motion.js"></script>
+</html>
