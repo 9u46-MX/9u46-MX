@@ -7,7 +7,7 @@
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
 <title>【模板】读入/输出优化 | 9u46 的小窝</title>
-<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1583831861363">
+<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1583889258170">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
 <link rel="stylesheet" href="/media/css/gemini.css">
@@ -322,12 +322,12 @@
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>2分钟</span>
+      <span>3分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>285<span class="pc-show">字数</span></span>
+      <span>436<span class="pc-show">字数</span></span>
     </span>
     
       <span id="/post/Template-IO/" class="meta-item pc-show leancloud_visitors">
@@ -355,6 +355,7 @@
 # define cstdio_by_9u46_MX
 # include &lt;cstdio&gt;
 # endif
+
 namespace MX {
     namespace IO {
         typedef long long unsigned int LLU;
@@ -362,7 +363,9 @@ namespace MX {
         void const (*enter)()(_enter), (*space)()(_space), (*nothing)()(_nothing);
         template&lt;typename T&gt; T inline read(); template&lt;typename T&gt; T inline read(T&amp;);
         template&lt;typename T&gt; void const inline write(T, void const (*)() = nothing);
+        template&lt;typename T&gt; void const inline writef(T, LLU const, void const (*)() = nothing);
         template&lt;typename T&gt; void const inline write(void const (*)(), LLU, ...);
+        template&lt;typename T&gt; void const inline writef(LLU const, void const (*)(), LLU, ...);
 
         void const inline _enter() { putchar('\n'); }
         void const inline _space() { putchar(' '); }
@@ -374,6 +377,10 @@ namespace MX {
             while (not isdigit(t = getchar())) if (t == '-') m = -m;
             T r(0);
             while (r = r * 10 + (t - '0') * m, isdigit(t = getchar()));
+            if (t == '.') {
+                T b(1);
+                while (isdigit(t = getchar())) r += (t - '0') * (b /= 10) * m;
+            }
             return r;
         }
         template&lt;typename T&gt;
@@ -383,13 +390,26 @@ namespace MX {
             while (not isdigit(t = getchar())) if (t == '-') m = -m;
             a = 0;
             while (a = a * 10 + (t - '0') * m, isdigit(t = getchar()));
+            if (t == '.') {
+                T b(1);
+                while (isdigit(t = getchar())) a += (t - '0') * (b /= 10) * m;
+            }
             return a;
         }
         template&lt;typename T&gt;
         void const inline write(T a, void const (*space)()) {
+            if (a &lt; 0) putchar('-'), a = -a;
             signed char s[20]; short unsigned int l(0);
             while (s[l++] = a % 10 + '0', a /= 10);
             while (l) putchar(s[--l]);
+            space();
+        }
+        template&lt;typename T&gt;
+        void const inline writef(T a, LLU const ac, void const (*space)()) {
+            if (a &lt; 0) putchar('-'), a = -a;
+            write((LLU const)a);
+            putchar('.');
+            for (LLU register i(0); i &lt; ac; ++i) putchar((LLU const)(a *= 10) % 10 + '0');
             space();
         }
         template&lt;typename T&gt;
@@ -397,6 +417,13 @@ namespace MX {
             va_list list;
             va_start(list, count);
             for (LLU register i(0); i &lt; count; ++i) write(va_arg(list, T), space);
+            va_end(list);
+        }
+        template&lt;typename T&gt;
+        void const inline writef(LLU const ac, void const (*space)(), LLU count, ...) {
+            va_list list;
+            va_start(list, count);
+            for (LLU register i(0); i &lt; count; ++i) writef(va_arg(list, T), ac, space);
             va_end(list);
         }
     }
