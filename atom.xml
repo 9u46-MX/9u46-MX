@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-11T01:14:34.516Z</updated>
+    <updated>2020-03-11T03:10:21.090Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -10,6 +10,44 @@
     <logo>https://9u46-mx.github.io/images/avatar.png</logo>
     <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
+    <entry>
+        <title type="html"><![CDATA[【模板】【库】math]]></title>
+        <id>https://9u46-mx.github.io/post/Template-math/</id>
+        <link href="https://9u46-mx.github.io/post/Template-math/">
+        </link>
+        <updated>2020-03-11T03:01:16.000Z</updated>
+        <content type="html"><![CDATA[<p>会根据需要不断强化功能。</p>
+<pre><code class="language-cpp"># ifndef math_by_9u46_MX
+# define math_by_9u46_MX
+
+# ifndef cmath_by_9u46_MX
+# define cmath_by_9u46_MX
+# include &lt;cmath&gt;
+# endif
+
+namespace MX {
+    typedef long long unsigned int LLU;
+    LLU inline const qpow(LLU base, LLU const ex, LLU const Mod) {
+        LLU r(1);
+        for (LLU register i(0); 1LLU &lt;&lt; i &lt;= ex; ++i) {
+            if (ex &amp; 1LLU &lt;&lt; i) r = (r * base) % Mod;
+            base = (base * base) % Mod;
+        }
+        return r;
+    }
+    template&lt;typename T&gt;
+    T const inline sqr(T const x) {
+        return pow(x, 2);
+    }
+    double const gcd(double const a, double const b) {
+        return fabs(b) &gt; 1e-3 ? gcd(b, fmod(a, b)) : a;
+    }
+}
+
+# endif
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[个人主页]]></title>
         <id>https://9u46-mx.github.io/post/MainPage/</id>
@@ -304,7 +342,7 @@ signed int main() {
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[【模板】读入/输出优化]]></title>
+        <title type="html"><![CDATA[【模板】【库】读入/输出优化]]></title>
         <id>https://9u46-mx.github.io/post/Template-IO/</id>
         <link href="https://9u46-mx.github.io/post/Template-IO/">
         </link>

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-      <meta charset="UTF-8"/>
+    <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
-<title>9u46 的小窝</title>
+<title>【模板】【库】math | 9u46 的小窝</title>
 <link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1583896187257">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
@@ -25,6 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
+    <meta name="description" content="【模板】【库】math" />
+    <meta name="keywords" content="库,模板" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -126,10 +128,25 @@
     </div>
     <div class="main-continer">
       
-      <div class="section-layout  gemini">
+      <div class="section-layout gemini ">
         <div class="section-layout-wrapper">
-          <div id="sidebarMeta" class="sidebar">
-    
+          
+
+<div class="sidebar">
+  
+    <div class="sidebar-box box-shadow-wrapper bg-color right-motion" id="sidebar">
+      
+        <div class="post-list-sidebar">
+          <div class="sidebar-title">
+            <span id="tocSideBar" class="sidebar-title-item sidebar-title-active">文章目录</span>
+            <span id="metaSideBar" class="sidebar-title-item">站点概览</span>
+          </div>
+        </div>
+      
+      <div class="sidebar-body gemini" id="sidebar_body">
+        
+          
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://9u46-mx.github.io//images/avatar.png"/>
@@ -190,82 +207,236 @@
   </div>
 
 </div>
+          
+        
+      </div>
+    </div>
+  
 </div>
 <script>
-  let sidebarMeta = document.querySelector('#sidebarMeta');
-  let scheme = 'gemini';
-  let sidebarWrapper = document.querySelector('.sidebar-wrapper');
-  if (sidebarMeta && (scheme === 'pisces' || scheme === 'gemini')) {
-    document.addEventListener('scroll', function(e) {
-      if (document.scrollingElement.scrollTop > parseInt(sidebarMeta.style.marginTop) + 10) {
-        sidebarWrapper.classList.add('home-sidebar-fixed')
-      } else {
-        sidebarWrapper.classList.remove('home-sidebar-fixed')
+  const SIDEBAR_TITLE_ACTIVE = 'sidebar-title-active';
+  const SIDEBAR_BODY_ACTIVE = 'sidebar-body-active';
+  const SLIDE_UP_IN = 'slide-up-in';
+
+  let sidebar = document.querySelector('#sidebar'),
+  tocSideBar = document.querySelector('#tocSideBar'),
+  metaSideBar = document.querySelector('#metaSideBar'),
+  postToc = document.querySelector('#post_toc'),
+  postSiteMeta = document.querySelector('#post_side_meta'),
+  sidebarTitle = document.querySelector('.sidebar-title'),
+  sidebarBody = document.querySelector('#sidebar_body');
+
+  tocSideBar && tocSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  metaSideBar && metaSideBar.addEventListener('click', (e) => {
+    toggleSidebar(e);
+  });
+
+  function toggleSidebar(e) {
+    let currentTitle = document.querySelector("."+SIDEBAR_TITLE_ACTIVE);
+    if (currentTitle == e.srcElement) {
+      return ;
+    }
+    let current, showElement, hideElement;
+    if (e.srcElement == metaSideBar) {
+      showElement = postSiteMeta;
+      hideElement = postToc;
+    } else if (e.srcElement == tocSideBar){
+      showElement = postToc;
+      hideElement = postSiteMeta;
+    }
+    currentTitle.classList.remove(SIDEBAR_TITLE_ACTIVE);
+    e.srcElement.classList.add(SIDEBAR_TITLE_ACTIVE);
+
+    window.Velocity(hideElement, 'stop');
+    window.Velocity(hideElement, 'transition.slideUpOut', {
+      display: 'none',
+      duration: 200,
+      complete: function () {
+        window.Velocity(showElement, 'transition.slideDownIn', {
+          duration: 200
+        });
       }
-    });
+    })
+    hideElement.classList.remove(SIDEBAR_BODY_ACTIVE);
+    showElement.classList.add(SIDEBAR_BODY_ACTIVE);
   }
-  </script>
-            <div class="section-box tag-line">
-              <div class="box-shadow-wrapper">
-                <div class="bg-color">
-                  <section class="section posts-expand">
-                    <div class="padding-wrapper">
-  <div class="tag-timeline-box">
-    <div class="tag-timeline-wrapper">
-      <div class="tag-timeline-title">
-        <h2>
-          主页
-          <small>标签</small>
-        </h2>
-      </div>
-      
+
+  postToc && postToc.addEventListener('transitionend', function() {
+    this.classList.remove(SLIDE_UP_IN);
+  });
+
+  if (sidebarBody) {
+    if (sidebarBody.classList.contains('pisces') || sidebarBody.classList.contains('gemini')) {
+      let hasFix = false;
+      let scrollEl = document.querySelector('.main-continer');
+      let limitTop = document.querySelector('#nav_ul').children.length * 42 + 162;
+      window.addEventListener('scroll', function(e) {
+        if (document.scrollingElement.scrollTop >= limitTop) {
+          if (!hasFix) {
+            sidebar.classList.add('sidebar-fixed');
+            hasFix = true;
+          }
+        } else {
+          if (hasFix) {
+            sidebar.classList.remove('sidebar-fixed');
+            hasFix = false;
+          }
+        }
+      });
+    }
+  }
+  
+</script>
+          <div class="section-box box-shadow-wrapper">
+            <div class="section bg-color post post-page">
+              <header class="post-header">
+  <h1 class="post-title">
+    <a class="post-title-link" href="https://9u46-mx.github.io/post/Template-math/">
+      【模板】【库】math
+    </a>
+  </h1>
+  <div class="post-meta">
+    
+    <span class="meta-item pc-show">
+      <i class="fa fa-calendar-o"></i>
+      <span>发布于</span>
+      <span>2020-03-11</span>
+      <span class="post-meta-divider pc-show">|</span>
+    </span>
+    
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
         
+          
+            <a href="https://9u46-mx.github.io/tag/_SROjcl_7/">
+              <span>库</span>
+            </a>、
           
         
           
-        
-      
-        
-          
-            <a href="https://9u46-mx.github.io/post/MainPage/">
-              <div class="motion-warpper">
-                <div class="tag-post-node">
-                  <h1>
-                    03-09
-                    <small>个人主页</small>
-                  </h1>
-                </div>  
-              </div>
+            <a href="https://9u46-mx.github.io/tag/t6NV2N1z9b/">
+              <span>模板</span>
             </a>
           
         
+      </span>
+      <span class="post-meta-divider">|</span>
+    
+    <span class="meta-item">
+      <i class="fa fa-clock-o"></i>
+      <span>1分钟</span>
+    </span>
+    <span class="meta-item">
+      <span class="post-meta-divider">|</span>
+      <i class="fa fa-file-word-o"></i>
+      <span>114<span class="pc-show">字数</span></span>
+    </span>
+    
+      <span id="/post/Template-math/" class="meta-item pc-show leancloud_visitors">
+        <span class="post-meta-divider">|</span>
+        <i class="fa fa-eye"></i>
+        <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
+      </span>
+    
+  </div>
+</header>
+              <div class="post-body next-md-body" id="post_body">
+                <p>会根据需要不断强化功能。</p>
+<pre><code class="language-cpp"># ifndef math_by_9u46_MX
+# define math_by_9u46_MX
+
+# ifndef cmath_by_9u46_MX
+# define cmath_by_9u46_MX
+# include &lt;cmath&gt;
+# endif
+
+namespace MX {
+    typedef long long unsigned int LLU;
+    LLU inline const qpow(LLU base, LLU const ex, LLU const Mod) {
+        LLU r(1);
+        for (LLU register i(0); 1LLU &lt;&lt; i &lt;= ex; ++i) {
+            if (ex &amp; 1LLU &lt;&lt; i) r = (r * base) % Mod;
+            base = (base * base) % Mod;
+        }
+        return r;
+    }
+    template&lt;typename T&gt;
+    T const inline sqr(T const x) {
+        return pow(x, 2);
+    }
+    double const gcd(double const a, double const b) {
+        return fabs(b) &gt; 1e-3 ? gcd(b, fmod(a, b)) : a;
+    }
+}
+
+# endif
+</code></pre>
+
+              </div>
+              <div class="post-footer">
+  <ul class="post-copyright">
+    <li class="post-copyright-author">
+      <strong>本文作者：</strong>
+      9u46 的小窝
+    </li>
+    <li class="post-copyright-link">
+      <strong>本文链接：</strong>
+      <a href="https://9u46-mx.github.io/post/Template-math/" title="【模板】【库】math">【模板】【库】math</a>
+    </li>
+    <li class="post-copyright-license">
+      <strong>版权声明： </strong>
+      本博客所有文章除特别声明外，转载请注明出处！
+    </li>
+  </ul>
+  <div class="tags">
+    
+      <a href="https://9u46-mx.github.io/tag/_SROjcl_7/"># 库</a>
+    
+      <a href="https://9u46-mx.github.io/tag/t6NV2N1z9b/"># 模板</a>
+    
+  </div>
+  <div class="nav">
+    <div class="nav-prev">
       
-        
-          
-        
+    </div>
+    <div class="nav-next">
       
-        
-          
-        
-      
-        
-          
-        
-          
-        
-      
-        
-      
-        
-          
-        
+        <a class="nav-pc-next" title="个人主页" href="https://9u46-mx.github.io/post/MainPage/">个人主页</a>
+        <a class="nav-mobile-next" title="个人主页" href="https://9u46-mx.github.io/post/MainPage/">下一篇</a>
+        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
 </div>
-                  </section>
-                </div>
-              </div>
+              
+                
+                  
+                    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+<script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+
+<div id="gitalk-container"></div>
+
+<script>
+  var gitalk = new Gitalk({
+    clientID: '2c4f4217806e95c9000f',
+    clientSecret: 'ddfe6425f56b696f22eb9a114a518d73c07695f6',
+    repo: 'comment',
+    owner: '9u46-MX',
+    admin: ['9u46-MX'],
+    id: (location.pathname).substring(0, 49),      // Ensure uniqueness and length less than 50
+    distractionFreeMode: false  // Facebook-like distraction free mode
+  })
+  gitalk.render('gitalk-container')
+</script>
+                  
+                  
+                
+              
+            </div>
           </div>
         </div>
       </div>
