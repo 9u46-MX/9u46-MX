@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-13T00:47:40.141Z</updated>
+    <updated>2020-03-13T04:25:35.143Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -431,23 +431,22 @@ signed int main() {
 # define cstdio_by_9u46_MX
 # include &lt;cstdio&gt;
 # endif
-
 namespace MX {
     namespace IO {
         typedef long long unsigned int LLU;
-        void const inline _enter(); void const inline _space(); void const inline _nothing();
-        void const (*enter)()(_enter), (*space)()(_space), (*nothing)()(_nothing);
-        template&lt;typename T&gt; T inline read(); template&lt;typename T&gt; T inline read(T&amp;);
-        template&lt;typename T&gt; void const inline write(T, void const (*)() = nothing);
-        template&lt;typename T&gt; void const inline writef(T, LLU const, void const (*)() = nothing);
-        template&lt;typename T&gt; void const inline write(void const (*)(), LLU, ...);
-        template&lt;typename T&gt; void const inline writef(LLU const, void const (*)(), LLU, ...);
+        inline const void _enter(); inline const void _space(); inline const void _nothing();
+        const void (*enter)()(_enter), (*space)()(_space), (*nothing)()(_nothing);
+        template&lt;typename T&gt; inline T read(); template&lt;typename T&gt; inline T read(T&amp;);
+        template&lt;typename T&gt; inline const void write(T, const void (*)() = nothing);
+        template&lt;typename T&gt; inline const void writef(T, const LLU, const void (*)() = nothing);
+        template&lt;typename T&gt; inline const void write(const void (*)(), LLU, ...);
+        template&lt;typename T&gt; inline const void writef(const LLU, const void (*)(), LLU, ...);
 
-        void const inline _enter() { putchar('\n'); }
-        void const inline _space() { putchar(' '); }
-        void const inline _nothing() {}
+        inline const void _enter() { putchar('\n'); }
+        inline const void _space() { putchar(' '); }
+        inline const void _nothing() {}
         template&lt;typename T&gt;
-        T inline read() {
+        inline T read() {
             signed char t;
             short signed int m(1);
             while (not isdigit(t = getchar())) if (t == '-') m = -m;
@@ -460,7 +459,7 @@ namespace MX {
             return r;
         }
         template&lt;typename T&gt;
-        T inline read(T&amp; a) {
+        inline T read(T&amp; a) {
             signed char t;
             short signed int m(1);
             while (not isdigit(t = getchar())) if (t == '-') m = -m;
@@ -473,7 +472,7 @@ namespace MX {
             return a;
         }
         template&lt;typename T&gt;
-        void const inline write(T a, void const (*space)()) {
+        inline const void write(T a, const void (*space)()) {
             if (a &lt; 0) putchar('-'), a = -a;
             signed char s[20]; short unsigned int l(0);
             while (s[l++] = a % 10 + '0', a /= 10);
@@ -481,25 +480,25 @@ namespace MX {
             space();
         }
         template&lt;typename T&gt;
-        void const inline writef(T a, LLU const ac, void const (*space)()) {
+        inline const void writef(T a, const LLU ac, const void (*space)()) {
             if (a &lt; 0) putchar('-'), a = -a;
-            write((LLU const)a);
+            write((const LLU)a);
             putchar('.');
-            for (LLU register i(0); i &lt; ac; ++i) putchar((LLU const)(a *= 10) % 10 + '0');
+            for (register LLU i(0); i &lt; ac; ++i) putchar((const LLU)(a *= 10) % 10 + '0');
             space();
         }
         template&lt;typename T&gt;
-        void const inline write(void const (*space)(), LLU count, ...) {
+        inline const void write(const void (*space)(), LLU count, ...) {
             va_list list;
             va_start(list, count);
-            for (LLU register i(0); i &lt; count; ++i) write(va_arg(list, T), space);
+            for (register LLU i(0); i &lt; count; ++i) write(va_arg(list, T), space);
             va_end(list);
         }
         template&lt;typename T&gt;
-        void const inline writef(LLU const ac, void const (*space)(), LLU count, ...) {
+        inline const void writef(const LLU ac, const void (*space)(), LLU count, ...) {
             va_list list;
             va_start(list, count);
-            for (LLU register i(0); i &lt; count; ++i) writef(va_arg(list, T), ac, space);
+            for (register LLU i(0); i &lt; count; ++i) writef(va_arg(list, T), ac, space);
             va_end(list);
         }
     }
