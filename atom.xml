@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-11T03:10:21.090Z</updated>
+    <updated>2020-03-13T00:21:22.757Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -10,6 +10,74 @@
     <logo>https://9u46-mx.github.io/images/avatar.png</logo>
     <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
+    <entry>
+        <title type="html"><![CDATA[【模板】【库】algorithm]]></title>
+        <id>https://9u46-mx.github.io/post/Template-algorithm/</id>
+        <link href="https://9u46-mx.github.io/post/Template-algorithm/">
+        </link>
+        <updated>2020-03-13T00:12:51.000Z</updated>
+        <content type="html"><![CDATA[<p>会根据需要不断强化功能。</p>
+<pre><code class="language-cpp"># ifndef algorithm_by_9u46_MX
+# define algorithm_by_9u46_MX
+
+namespace MX {
+    template&lt;typename T&gt;
+    inline const T min(const T a, const T b) {
+        return a &lt; b ? a : b;
+    }
+    template&lt;typename T&gt;
+    inline const T max(const T a, const T b) {
+        return a &lt; b ? b : a;
+    }
+    template&lt;typename T&gt;
+    inline const void swap(T&amp; a, T&amp; b) {
+        T c = b;
+        b = a, a = c;
+    }
+    template&lt;typename T&gt;
+    inline const bool _Comp(const T a, const T b) {
+        return a &lt; b;
+    }
+    template&lt;typename T&gt;
+    inline const void Insertion_sort(T* const left, T* const right, const bool (*comp)(const T, const T) = (_Comp)) {
+        for (T* i(left); i &lt; right; ++i) {
+            T* m(i);
+            for (T* j(i + 1); j &lt; right; ++j)
+                if (comp(*j, *m)) m = j;
+            swap(*i, *m);
+        }
+    }
+    template&lt;typename T&gt;
+    const void sort(T* const left, T* const right, const bool (*comp)(const T, const T) = (_Comp)) {
+        if (right - left &lt;= 5) {
+            Insertion_sort(left, right, comp);
+            return;
+        }
+        T* const middle(left + (right - left &gt;&gt; 1));
+        sort(left, middle), sort(middle, right);
+        struct Type {
+            T value;
+            Type* next;
+            Type() { next = NULL; }
+            Type(const T value, Type* const next) { this-&gt;value = value, this-&gt;next = next; }
+        };
+        Type *begin(new Type(Type())), *end(begin);
+        for (T *i(left), *j(middle); i &lt; middle or j &lt; right;)
+            if (i == middle or j &lt; right &amp;&amp; comp(*j, *i)) end = (*end = Type(*j++, new Type(Type()))).next;
+            else end = (*end = Type(*i++, new Type(Type()))).next;
+        for (T* i(left); i &lt; right; ++i) {
+            *i = begin-&gt;value;
+            Type* const _begin(begin-&gt;next);
+            delete begin, begin = _begin;
+        }
+        delete begin;
+    }
+}
+
+# endif
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【模板】【库】math]]></title>
         <id>https://9u46-mx.github.io/post/Template-math/</id>

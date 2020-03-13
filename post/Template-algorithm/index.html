@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
-<title>【题解】洛谷 P6194 | 9u46 的小窝</title>
+<title>【模板】【库】algorithm | 9u46 的小窝</title>
 <link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1584058743496">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="【题解】洛谷 P6194" />
-    <meta name="keywords" content="题解" />
+    <meta name="description" content="【模板】【库】algorithm" />
+    <meta name="keywords" content="库,模板" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -146,8 +146,7 @@
       <div class="sidebar-body gemini" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper bg-color">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://9u46-mx.github.io//images/avatar.png"/>
@@ -208,181 +207,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%B4%9B%E8%B0%B73%E6%9C%88%E6%9C%88%E8%B5%9B%E8%8B%8F%E8%81%94%E4%BA%BA">【洛谷3月月赛】苏联人</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    lList.push(elem);
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop + 10;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-addTocNumber(tocContent, '');
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-            </div>
           
         
       </div>
@@ -470,8 +294,8 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://9u46-mx.github.io/post/Solution-luogu-P6198/">
-      【题解】洛谷 P6194
+    <a class="post-title-link" href="https://9u46-mx.github.io/post/Template-algorithm/">
+      【模板】【库】algorithm
     </a>
   </h1>
   <div class="post-meta">
@@ -479,7 +303,7 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-03-08</span>
+      <span>2020-03-13</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -488,8 +312,14 @@ window.addEventListener('load', function() {
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://9u46-mx.github.io/tag/yClKle0zb/">
-              <span>题解</span>
+            <a href="https://9u46-mx.github.io/tag/_SROjcl_7/">
+              <span>库</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/t6NV2N1z9b/">
+              <span>模板</span>
             </a>
           
         
@@ -498,15 +328,15 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>3分钟</span>
+      <span>2分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>424<span class="pc-show">字数</span></span>
+      <span>297<span class="pc-show">字数</span></span>
     </span>
     
-      <span id="/post/Solution-luogu-P6198/" class="meta-item pc-show leancloud_visitors">
+      <span id="/post/Template-algorithm/" class="meta-item pc-show leancloud_visitors">
         <span class="post-meta-divider">|</span>
         <i class="fa fa-eye"></i>
         <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
@@ -515,85 +345,65 @@ window.addEventListener('load', function() {
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <h2 id="洛谷3月月赛苏联人">【洛谷3月月赛】苏联人</h2>
-<p>一道很水的模拟。存完图之后对每个非空的点进行搜索。<br>
-时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>8</mn><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(8^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
-<pre><code class="language-cpp"># ifndef cstdio_by_9u46_MX
-# define cstdio_by_9u46_MX
-# include &lt;cstdio&gt;
+                <p>会根据需要不断强化功能。</p>
+<pre><code class="language-cpp"># ifndef algorithm_by_9u46_MX
+# define algorithm_by_9u46_MX
+
+namespace MX {
+    template&lt;typename T&gt;
+    inline const T min(const T a, const T b) {
+        return a &lt; b ? a : b;
+    }
+    template&lt;typename T&gt;
+    inline const T max(const T a, const T b) {
+        return a &lt; b ? b : a;
+    }
+    template&lt;typename T&gt;
+    inline const void swap(T&amp; a, T&amp; b) {
+        T c = b;
+        b = a, a = c;
+    }
+    template&lt;typename T&gt;
+    inline const bool _Comp(const T a, const T b) {
+        return a &lt; b;
+    }
+    template&lt;typename T&gt;
+    inline const void Insertion_sort(T* const left, T* const right, const bool (*comp)(const T, const T) = (_Comp)) {
+        for (T* i(left); i &lt; right; ++i) {
+            T* m(i);
+            for (T* j(i + 1); j &lt; right; ++j)
+                if (comp(*j, *m)) m = j;
+            swap(*i, *m);
+        }
+    }
+    template&lt;typename T&gt;
+    const void sort(T* const left, T* const right, const bool (*comp)(const T, const T) = (_Comp)) {
+        if (right - left &lt;= 5) {
+            Insertion_sort(left, right, comp);
+            return;
+        }
+        T* const middle(left + (right - left &gt;&gt; 1));
+        sort(left, middle), sort(middle, right);
+        struct Type {
+            T value;
+            Type* next;
+            Type() { next = NULL; }
+            Type(const T value, Type* const next) { this-&gt;value = value, this-&gt;next = next; }
+        };
+        Type *begin(new Type(Type())), *end(begin);
+        for (T *i(left), *j(middle); i &lt; middle or j &lt; right;)
+            if (i == middle or j &lt; right &amp;&amp; comp(*j, *i)) end = (*end = Type(*j++, new Type(Type()))).next;
+            else end = (*end = Type(*i++, new Type(Type()))).next;
+        for (T* i(left); i &lt; right; ++i) {
+            *i = begin-&gt;value;
+            Type* const _begin(begin-&gt;next);
+            delete begin, begin = _begin;
+        }
+        delete begin;
+    }
+}
+
 # endif
-
-namespace Soviets {
-    signed char inline gc() {
-        signed char t;
-        while (t = getchar(), t != '.' &amp;&amp; t != 'R' &amp;&amp; t != 'B');
-        return t;
-    }
-    void const inline pc(bool const b) {
-        putchar(b ? '1' : '0');
-    }
-    signed char Chess_Set[8][8];
-    bool ans[8][8];
-
-    void const inline begin() {
-        for (short unsigned int register i(0); i &lt; 8; ++i)
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                ans[i][j] = (Chess_Set[i][j] = gc()) == '.';
-    }
-    void const inline end() {
-        for (short unsigned int register i(0); i &lt; 8; ++i) {
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                pc(ans[i][j]);
-            putchar('\n');
-        }
-    }
-
-    void const inline work(short unsigned int const x, short unsigned int const y) {
-        switch (Chess_Set[x][y]) {
-        case 'R':
-            for (short signed int register i(x - 1); i &gt;= 0 and Chess_Set[i][y] == '.'; --i) ans[i][y] = false;
-            for (short signed int register i(x + 1); i &lt; 8 and Chess_Set[i][y] == '.'; ++i) ans[i][y] = false;
-            for (short signed int register i(y - 1); i &gt;= 0 and Chess_Set[x][i] == '.'; --i) ans[x][i] = false;
-            for (short signed int register i(y + 1); i &lt; 8 and Chess_Set[x][i] == '.'; ++i) ans[x][i] = false;
-            break;
-        case 'B':
-            for (
-                short signed int register i(x - 1), j(y - 1);
-                i &gt;= 0 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
-                --i, --j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x - 1), j(y + 1);
-                i &gt;= 0 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
-                --i, ++j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x + 1), j(y - 1);
-                i &lt; 8 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
-                ++i, --j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x + 1), j(y + 1);
-                i &lt; 8 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
-                ++i, ++j
-            ) ans[i][j] = false;
-            break;
-        }
-    }
-
-    void const inline MAIN() {
-        begin();
-        for (short unsigned int register i(0); i &lt; 8; ++i)
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                if (Chess_Set[i][j] not_eq '.') work(i, j);
-        end();
-    }
-}
-
-signed int main() {
-    Soviets::MAIN();
-    return 0;
-}
 </code></pre>
 
               </div>
@@ -605,7 +415,7 @@ signed int main() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://9u46-mx.github.io/post/Solution-luogu-P6198/" title="【题解】洛谷 P6194">【题解】洛谷 P6194</a>
+      <a href="https://9u46-mx.github.io/post/Template-algorithm/" title="【模板】【库】algorithm">【模板】【库】algorithm</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -614,21 +424,19 @@ signed int main() {
   </ul>
   <div class="tags">
     
-      <a href="https://9u46-mx.github.io/tag/yClKle0zb/"># 题解</a>
+      <a href="https://9u46-mx.github.io/tag/_SROjcl_7/"># 库</a>
+    
+      <a href="https://9u46-mx.github.io/tag/t6NV2N1z9b/"># 模板</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="【题解】洛谷 P6195" href="https://9u46-mx.github.io/post/Solution-luogu-P6195/">【题解】洛谷 P6195</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="【题解】洛谷 P6195" href="https://9u46-mx.github.io/post/Solution-luogu-P6195/">上一篇</a>
-      
     </div>
     <div class="nav-next">
       
-        <a class="nav-pc-next" title="【模板】【库】读入/输出优化" href="https://9u46-mx.github.io/post/Template-IO/">【模板】【库】读入/输出优化</a>
-        <a class="nav-mobile-next" title="【模板】【库】读入/输出优化" href="https://9u46-mx.github.io/post/Template-IO/">下一篇</a>
+        <a class="nav-pc-next" title="【模板】【库】math" href="https://9u46-mx.github.io/post/Template-math/">【模板】【库】math</a>
+        <a class="nav-mobile-next" title="【模板】【库】math" href="https://9u46-mx.github.io/post/Template-math/">下一篇</a>
         <i class="fa fa-chevron-right"></i>
       
     </div>
