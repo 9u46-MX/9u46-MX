@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-14T13:28:58.069Z</updated>
+    <updated>2020-03-17T05:35:46.298Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -10,6 +10,46 @@
     <logo>https://9u46-mx.github.io/images/avatar.png</logo>
     <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
+    <entry>
+        <title type="html"><![CDATA[【模板】【库】Union-Find]]></title>
+        <id>https://9u46-mx.github.io/post/Template-Union-Find/</id>
+        <link href="https://9u46-mx.github.io/post/Template-Union-Find/">
+        </link>
+        <updated>2020-03-17T05:33:20.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-cpp"># ifndef Union_Find_by_9u46_MX
+# define Union_Fine_by_9u46_MX
+
+namespace MX {
+    template&lt;const unsigned int len&gt;
+    class Union_Find {
+    private:
+        unsigned int mo[len + 1], size[len + 1];
+    public:
+        Union_Find() {
+            for (register unsigned int i(0); i &lt;= len; ++i)
+                mo[i] = i, size[i] = 1;
+        }
+        const unsigned int goddess(const unsigned int x) {
+            return mo[x] == x ? x : (mo[x] = goddess(mo[x]));
+        }
+        inline const bool query(const unsigned int x, const unsigned int y) {
+            return goddess(x) == goddess(y);
+        }
+        inline const void merge(unsigned int x, unsigned int y) {
+            x = goddess(x), y = goddess(y);
+            if (x == y) return;
+            if (size[x] &gt;= size[y])
+                size[x] += size[y], mo[y] = x;
+            else
+                size[y] += size[x], mo[x] = y;
+        }
+    };
+}
+
+# endif
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【模板】【库】algorithm]]></title>
         <id>https://9u46-mx.github.io/post/Template-algorithm/</id>
