@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-03-17T05:35:46.298Z</updated>
+    <updated>2020-03-17T06:30:50.918Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -10,6 +10,67 @@
     <logo>https://9u46-mx.github.io/images/avatar.png</logo>
     <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
+    <entry>
+        <title type="html"><![CDATA[【模板】【库】vector]]></title>
+        <id>https://9u46-mx.github.io/post/Template-vector/</id>
+        <link href="https://9u46-mx.github.io/post/Template-vector/">
+        </link>
+        <updated>2020-03-17T05:38:47.000Z</updated>
+        <content type="html"><![CDATA[<pre><code class="language-cpp"># ifndef vector_by_9u46_MX
+# define vector_by_9u46_MX
+
+namespace MX {
+    template&lt;typename T&gt;
+    class vector {
+    private:
+        T *begin, *end, *now;
+    public:
+        vector() { end = (begin = new T [1]) + 1, now = begin; }
+        inline const T&amp; operator [] (const unsigned int x) const {
+            return begin[x];
+        }
+        inline const unsigned int size() const {
+            return end - begin;
+        }
+        inline const unsigned int length() const {
+            return now - begin;
+        }
+        inline const void clear() {
+            now = begin;
+        }
+        inline const bool empty() {
+            return length() == 0;
+        }
+    private:
+        inline const void grow() {
+            const unsigned int len(length());
+            T *const _begin(new T [len &lt;&lt; 1]);
+            now = _begin + len, end = _begin + (len &lt;&lt; 1);
+            for (register unsigned int i(0); i &lt; len; ++i)
+                _begin[i] = begin[i];
+            delete[]begin, begin = _begin;
+        }
+    public:
+        inline const void push_back(const T x) {
+            if (length() == size()) grow();
+            *now++ = x;
+        }
+        inline const void pop_back() {
+            --now;
+        }
+        inline const T&amp; back() const {
+            return (*this)[length() - 1];
+        }
+        inline const void del() {
+            delete[]begin;
+        }
+    };
+}
+
+# endif
+</code></pre>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[【模板】【库】Union-Find]]></title>
         <id>https://9u46-mx.github.io/post/Template-Union-Find/</id>
