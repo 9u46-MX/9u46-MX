@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
-<title>【题解】洛谷 P6194 | 9u46 的小窝</title>
+<title>4月9日物理 | 9u46 的小窝</title>
 <link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1586695686264">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="【题解】洛谷 P6194" />
-    <meta name="keywords" content="题解" />
+    <meta name="description" content="4月9日物理" />
+    <meta name="keywords" content="作业" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -146,8 +146,7 @@
       <div class="sidebar-body muse" id="sidebar_body">
         
           
-            <div class="post-side-meta" id="post_side_meta">
-              
+            
 <div class="sidebar-wrapper box-shadow-wrapper ">
   <div class="sidebar-item">
     <img class="site-author-image right-motion" src="https://9u46-mx.github.io//images/avatar.png"/>
@@ -199,181 +198,6 @@
   </div>
 
 </div>
-            </div>
-            <div class="post-toc sidebar-body-active" id="post_toc" style="opacity: 1;">
-              <div class="toc-box right-motion">
-  <div class="toc-wrapper auto-number auto" id="toc_wrapper">
-    <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E6%B4%9B%E8%B0%B73%E6%9C%88%E6%9C%88%E8%B5%9B%E8%8B%8F%E8%81%94%E4%BA%BA">【洛谷3月月赛】苏联人</a></li>
-</ul>
-</li>
-</ul>
-
-  </div>
-</div>
-
-<script>
-
-let lastTop = 0, lList = [], hList = [], postBody, lastIndex = -1; 
-let active = 'active-show', activeClass = 'active-current';
-let tocWrapper = document.querySelector('#toc_wrapper');
-let tocContent = tocWrapper.children[0];
-let autoNumber = tocWrapper&&tocWrapper.classList.contains('auto-number');
-
-function addTocNumber(elem, deep) {
-  if (!elem) {
-    return;
-  }
-  let prop = elem.__proto__;
-
-  if (prop === HTMLUListElement.prototype) {
-    for (let i = 0; i < elem.children.length; i++) {
-      addTocNumber(elem.children[i], deep + (i + 1) + '.');
-    }
-  } else if (prop === HTMLLIElement.prototype) {
-    // 保存li元素
-    lList.push(elem);
-    for (let i = 0; i < elem.children.length; i++) {
-      let cur = elem.children[i];
-      if (cur.__proto__ === HTMLAnchorElement.prototype) {
-        if (autoNumber) {
-          cur.text =  deep + ' ' + cur.text;
-        }
-      } else if (cur.__proto__ === HTMLUListElement.prototype) {
-        addTocNumber(cur, deep);
-      }
-    }
-  }
-}
-
-
-document.addEventListener('scroll', function(e) {
-  if (lList.length <= 0) {
-    return;
-  }
-  let scrollTop = document.scrollingElement.scrollTop + 10;
-  let dir;
-
-  if (lastTop - scrollTop > 0) {
-    dir = 'up';
-  } else {
-    dir = 'down';
-  }
-
-  lastTop = scrollTop;
-  if (scrollTop <= 0) {
-    if (lastIndex >= 0 && lastIndex < hList.length) {
-      lList[lastIndex].classList.remove(activeClass);
-    }
-    return;
-  }
-
-  let current = 0, hasFind = false;
-  for (let i = 0; i < hList.length; i++) {
-    if (hList[i].offsetTop > scrollTop) {
-      current = i;
-      hasFind = true;
-      break;
-    }
-  }
-  if (!hasFind && scrollTop > lList[lList.length - 1].offsetTop) {
-    current = hList.length - 1;
-  } else {
-    current--;
-  }
-  if (dir === 'down') {
-    if (current > lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex) 
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  } else {
-    if (current < lastIndex) {
-      addActiveClass(current);
-      removeActiveClass(lastIndex);
-      lastIndex = current;
-      removeParentActiveClass();
-      lList[current] && addActiveLiElemment(lList[current].parentElement,tocContent);
-    }
-  }
-});
-
-function removeParentActiveClass() {
-  let parents = tocContent.querySelectorAll('.'+active)
-  parents.forEach(function(elem) {
-    elem.classList.remove(active);
-  });
-}
-
-function addActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.add(activeClass);
-  }
-}
-
-function removeActiveClass(index) {
-  if (index >= 0 && index < hList.length) {
-    lList[index].classList.remove(activeClass);
-  }
-}
-
-function addActiveLiElemment(elem, parent) {
-  if (!elem || elem === parent) {
-    return;
-  } else {
-    if (elem.__proto__ === HTMLLIElement.prototype) {
-      elem.classList.add(active);
-    }
-    addActiveLiElemment(elem.parentElement, parent);
-  }
-}
-
-function showToc() {
-  if (tocWrapper) {
-    postBody = document.querySelector('#post_body');
-    for (let i = 0; i < postBody.children.length; i++) {
-      if (postBody.children[i].__proto__ === HTMLHeadingElement.prototype) {
-        hList.push(postBody.children[i]);
-      }
-    }
-    if (tocWrapper.classList.contains('compress')) {
-        tocContent.classList.add('closed');
-    } else if (tocWrapper.classList.contains('no_compress')){
-      tocContent.classList.add('expanded');
-    } else {
-      if (hList.length > 10) {
-        active = 'active-hidden'
-        tocContent.classList.add('closed');
-      } else {
-        tocContent.classList.add('expanded');
-      }
-    }
-  }
-}
-addTocNumber(tocContent, '');
-
-window.addEventListener('load', function() {
-  showToc();
-  document.querySelector('#sidebar').style='display: block;';
-  tocWrapper.classList.add('toc-active');
-  setTimeout(function() {
-    if ("createEvent" in document) {
-      let evt = document.createEvent("HTMLEvents");
-      evt.initEvent("scroll", false, true);
-      document.dispatchEvent(evt);
-    }
-    else {
-      document.fireEvent("scroll");
-    }
-  }, 500)
-})
-
-</script>
-            </div>
           
         
       </div>
@@ -461,8 +285,8 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://9u46-mx.github.io/post/Solution-luogu-P6198/">
-      【题解】洛谷 P6194
+    <a class="post-title-link" href="https://9u46-mx.github.io/post/4-9-Pysics/">
+      4月9日物理
     </a>
   </h1>
   <div class="post-meta">
@@ -470,7 +294,7 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2020-03-08</span>
+      <span>2020-04-12</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
@@ -479,8 +303,8 @@ window.addEventListener('load', function() {
         <span class="pc-show">分类于</span>
         
           
-            <a href="https://9u46-mx.github.io/tag/yClKle0zb/">
-              <span>题解</span>
+            <a href="https://9u46-mx.github.io/tag/nBWBLWGRiU/">
+              <span>作业</span>
             </a>
           
         
@@ -489,15 +313,15 @@ window.addEventListener('load', function() {
     
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>3分钟</span>
+      <span>1分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>424<span class="pc-show">字数</span></span>
+      <span>161<span class="pc-show">字数</span></span>
     </span>
     
-      <span id="/post/Solution-luogu-P6198/" class="meta-item pc-show leancloud_visitors">
+      <span id="/post/4-9-Pysics/" class="meta-item pc-show leancloud_visitors">
         <span class="post-meta-divider">|</span>
         <i class="fa fa-eye"></i>
         <span>浏览量：<span class="leancloud-visitors-count" ></span></span>
@@ -506,86 +330,10 @@ window.addEventListener('load', function() {
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <h2 id="洛谷3月月赛苏联人">【洛谷3月月赛】苏联人</h2>
-<p>一道很水的模拟。存完图之后对每个非空的点进行搜索。<br>
-时间复杂度：<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><msup><mn>8</mn><mn>3</mn></msup><mo>)</mo></mrow><annotation encoding="application/x-tex">O(8^3)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord"><span class="mord">8</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>。</p>
-<pre><code class="language-cpp"># ifndef cstdio_by_9u46_MX
-# define cstdio_by_9u46_MX
-# include &lt;cstdio&gt;
-# endif
-
-namespace Soviets {
-    signed char inline gc() {
-        signed char t;
-        while (t = getchar(), t != '.' &amp;&amp; t != 'R' &amp;&amp; t != 'B');
-        return t;
-    }
-    void const inline pc(bool const b) {
-        putchar(b ? '1' : '0');
-    }
-    signed char Chess_Set[8][8];
-    bool ans[8][8];
-
-    void const inline begin() {
-        for (short unsigned int register i(0); i &lt; 8; ++i)
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                ans[i][j] = (Chess_Set[i][j] = gc()) == '.';
-    }
-    void const inline end() {
-        for (short unsigned int register i(0); i &lt; 8; ++i) {
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                pc(ans[i][j]);
-            putchar('\n');
-        }
-    }
-
-    void const inline work(short unsigned int const x, short unsigned int const y) {
-        switch (Chess_Set[x][y]) {
-        case 'R':
-            for (short signed int register i(x - 1); i &gt;= 0 and Chess_Set[i][y] == '.'; --i) ans[i][y] = false;
-            for (short signed int register i(x + 1); i &lt; 8 and Chess_Set[i][y] == '.'; ++i) ans[i][y] = false;
-            for (short signed int register i(y - 1); i &gt;= 0 and Chess_Set[x][i] == '.'; --i) ans[x][i] = false;
-            for (short signed int register i(y + 1); i &lt; 8 and Chess_Set[x][i] == '.'; ++i) ans[x][i] = false;
-            break;
-        case 'B':
-            for (
-                short signed int register i(x - 1), j(y - 1);
-                i &gt;= 0 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
-                --i, --j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x - 1), j(y + 1);
-                i &gt;= 0 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
-                --i, ++j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x + 1), j(y - 1);
-                i &lt; 8 &amp;&amp; j &gt;= 0 and Chess_Set[i][j] == '.';
-                ++i, --j
-            ) ans[i][j] = false;
-            for (
-                short signed int register i(x + 1), j(y + 1);
-                i &lt; 8 &amp;&amp; j &lt; 8 and Chess_Set[i][j] == '.';
-                ++i, ++j
-            ) ans[i][j] = false;
-            break;
-        }
-    }
-
-    void const inline MAIN() {
-        begin();
-        for (short unsigned int register i(0); i &lt; 8; ++i)
-            for (short unsigned int register j(0); j &lt; 8; ++j)
-                if (Chess_Set[i][j] not_eq '.') work(i, j);
-        end();
-    }
-}
-
-signed int main() {
-    Soviets::MAIN();
-    return 0;
-}
-</code></pre>
+                <p><span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex">\def{\m}{\operatorname{m}}\def{\cm}{\operatorname{cm}}\def{\kg}{\operatorname{kg}}\def{\N}{\operatorname{N}}\def{\Pa}{\operatorname{Pa}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"></span></span><br>
+解：<br>
+(1) 由图可知，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 点深度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>h</mi><mi>A</mi></msub><mo>=</mo><mn>100</mn><mi mathvariant="normal">cm</mi><mo>⁡</mo><mo>−</mo><mn>35</mn><mi mathvariant="normal">cm</mi><mo>⁡</mo><mo>=</mo><mn>65</mn><mi mathvariant="normal">cm</mi><mo>⁡</mo><mo>=</mo><mn>0.65</mn><mi mathvariant="normal">m</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\def{\m}{\operatorname{m}}\def{\cm}{\operatorname{cm}}\def{\kg}{\operatorname{kg}}\def{\N}{\operatorname{N}}h_A = 100\cm - 35\cm = 65\cm = 0.65\m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">1</span><span class="mord">0</span><span class="mord">0</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">c</span><span class="mord mathrm">m</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">−</span><span class="mord">3</span><span class="mord">5</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">c</span><span class="mord mathrm">m</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">6</span><span class="mord">5</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">c</span><span class="mord mathrm">m</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.64444em;vertical-align:0em;"></span><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">5</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">m</span></span></span></span></span>；<br>
+<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo>∴</mo></mrow><annotation encoding="application/x-tex">\therefore</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.69224em;vertical-align:0em;"></span><span class="mrel amsrm">∴</span></span></span></span> 由公式 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>p</mi><mo>=</mo><mi>ρ</mi><mi>g</mi><mi>h</mi></mrow><annotation encoding="application/x-tex">p = \rho g h</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">p</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">ρ</span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mord mathdefault">h</span></span></span></span> 可知，水对 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>A</mi></mrow><annotation encoding="application/x-tex">A</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord mathdefault">A</span></span></span></span> 点的压强 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>A</mi></msub><mo>=</mo><msub><mi>ρ</mi><mi mathvariant="normal">水</mi></msub><mo>⋅</mo><mi>g</mi><mo>⋅</mo><msub><mi>h</mi><mi>A</mi></msub><mo>=</mo><mn>1</mn><msup><mn>0</mn><mn>3</mn></msup><mi mathvariant="normal">kg</mi><mo>⁡</mo><mi mathvariant="normal">/</mi><msup><mi mathvariant="normal">m</mi><mo>⁡</mo><mn>3</mn></msup><mo>×</mo><mn>10</mn><mi mathvariant="normal">N</mi><mo>⁡</mo><mi mathvariant="normal">/</mi><mi mathvariant="normal">kg</mi><mo>⁡</mo><mo>×</mo><mn>0.65</mn><mi mathvariant="normal">m</mi><mo>⁡</mo><mo>=</mo><mn>6.5</mn><mo>×</mo><mn>1</mn><msup><mn>0</mn><mn>3</mn></msup><mi mathvariant="normal">Pa</mi><mo>⁡</mo></mrow><annotation encoding="application/x-tex">\def{\m}{\operatorname{m}}\def{\cm}{\operatorname{cm}}\def{\kg}{\operatorname{kg}}\def{\N}{\operatorname{N}}\def{\Pa}{\operatorname{Pa}}p_A = \rho _水 \cdot g \cdot h_A = 10^3\kg/\m^3 \times 10 \N/\kg \times 0.65\m = 6.5 \times 10^3\Pa</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">ρ</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:-0.15em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord cjk_fallback mtight">水</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.63889em;vertical-align:-0.19444em;"></span><span class="mord mathdefault" style="margin-right:0.03588em;">g</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">⋅</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.84444em;vertical-align:-0.15em;"></span><span class="mord"><span class="mord mathdefault">h</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.32833099999999993em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">A</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">k</span><span class="mord mathrm" style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">/</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mop"><span class="mord mathrm">m</span></span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">×</span><span class="mord">1</span><span class="mord">0</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">N</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">/</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">k</span><span class="mord mathrm" style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord">×</span><span class="mord">0</span><span class="mord">.</span><span class="mord">6</span><span class="mord">5</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">m</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.72777em;vertical-align:-0.08333em;"></span><span class="mord">6</span><span class="mord">.</span><span class="mord">5</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">3</span></span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop"><span class="mord mathrm">P</span><span class="mord mathrm">a</span></span></span></span></span>。</p>
 
               </div>
               <div class="post-footer">
@@ -596,7 +344,7 @@ signed int main() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://9u46-mx.github.io/post/Solution-luogu-P6198/" title="【题解】洛谷 P6194">【题解】洛谷 P6194</a>
+      <a href="https://9u46-mx.github.io/post/4-9-Pysics/" title="4月9日物理">4月9日物理</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -605,22 +353,14 @@ signed int main() {
   </ul>
   <div class="tags">
     
-      <a href="https://9u46-mx.github.io/tag/yClKle0zb/"># 题解</a>
+      <a href="https://9u46-mx.github.io/tag/nBWBLWGRiU/"># 作业</a>
     
   </div>
   <div class="nav">
     <div class="nav-prev">
       
-        <i class="fa fa-chevron-left"></i>
-        <a class="nav-pc-next" title="【题解】洛谷 P6195" href="https://9u46-mx.github.io/post/Solution-luogu-P6195/">【题解】洛谷 P6195</a class="nav-pc-next">
-        <a class="nav-mobile-prev" title="【题解】洛谷 P6195" href="https://9u46-mx.github.io/post/Solution-luogu-P6195/">上一篇</a>
-      
     </div>
     <div class="nav-next">
-      
-        <a class="nav-pc-next" title="【模板】【库】读入/输出优化" href="https://9u46-mx.github.io/post/Template-IO/">【模板】【库】读入/输出优化</a>
-        <a class="nav-mobile-next" title="【模板】【库】读入/输出优化" href="https://9u46-mx.github.io/post/Template-IO/">下一篇</a>
-        <i class="fa fa-chevron-right"></i>
       
     </div>
   </div>
