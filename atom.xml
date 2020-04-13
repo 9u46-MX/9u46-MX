@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-04-13T09:36:31.978Z</updated>
+    <updated>2020-04-13T10:08:43.607Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://9u46-mx.github.io/images/avatar.png</logo>
     <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
+    <entry>
+        <title type="html"><![CDATA[4月13日语文]]></title>
+        <id>https://9u46-mx.github.io/post/20-04-13-Chinese/</id>
+        <link href="https://9u46-mx.github.io/post/20-04-13-Chinese/">
+        </link>
+        <updated>2020-04-13T09:43:40.000Z</updated>
+        <content type="html"><![CDATA[<h2 id="蒹葭第一小节简析">《蒹葭》第一小节简析</h2>
+<p>“白露为霜”表明了时间是深秋凌晨。诗人来到河边追寻所爱的人，而看到的只是荒凉的茫茫芦苇丛，所感受到的只有冷寂与落寞。诗人只是知道所爱的人在对岸，但却不知道具体在哪里。朱熹曾这样赏析道：“言秋水方盛之时，所谓彼人者，乃在水之一方，上下求之皆不可得。然不知其所指也。”诗人看似无力的追寻，实则饱含诗人热切的期待与对爱情强烈的渴望，但也透露出一种难以找到的惆怅。始终用阳部韵，富有音乐感，读来朗朗上口。这里还是一处环境描写，交代了时间与地点，渲染了凄清冷寂的气氛，烘托了诗人惆怅的心情，生动地刻画出了诗人对所爱之人深深的向往与不懈的追求。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[4月13日物理]]></title>
         <id>https://9u46-mx.github.io/post/20-04-13-Physics/</id>
@@ -608,108 +618,6 @@ signed int main() {
     Soviets::MAIN();
     return 0;
 }
-</code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[【模板】【库】读入/输出优化]]></title>
-        <id>https://9u46-mx.github.io/post/Template-IO/</id>
-        <link href="https://9u46-mx.github.io/post/Template-IO/">
-        </link>
-        <updated>2020-03-08T05:53:13.000Z</updated>
-        <content type="html"><![CDATA[<p>会根据需要不断强化功能。</p>
-<pre><code class="language-cpp"># ifndef IO_by_9u46_MX
-# define IO_by_9u46_MX
-
-# ifndef cctype_by_9u46_MX
-# define cctype_by_9u46_MX
-# include &lt;cctype&gt;
-# endif
-# ifndef cstdio_by_9u46_MX
-# define cstdio_by_9u46_MX
-# include &lt;cstdio&gt;
-# endif
-# ifndef cstdarg_by_9u46_MX
-# define cstdarg_by_9u46_MX
-# include &lt;cstdarg&gt;
-# endif
-
-namespace MX {
-    namespace IO {
-        typedef long long signed int LLD;
-        typedef long long unsigned int LLU;
-        inline const void space() { putchar(' '); }
-        inline const void enter() { putchar('\n'); }
-        inline const void dot() { putchar('.'); }
-        inline const void nothing() {}
-
-        template&lt;typename T&gt;
-        inline T read() {
-            signed char t;
-            short signed int m(1);
-            while (not isdigit(t = getchar())) if (t == '-') m = -m;
-            T r(0);
-            while (r = r * 10 + (t - '0') * m, isdigit(t = getchar()));
-            if (t == '.') {
-                T base(1);
-                while (isdigit(t = getchar())) r += (t - '0') * (base /= 10) * m;
-            }
-            return r;
-        }
-        template&lt;typename T&gt;
-        inline T read(T&amp; a) {
-            a = read&lt;T&gt;();
-            return a;
-        }
-
-        template&lt;typename T&gt;
-        inline const void write(T a, const void (*space)() = nothing) {
-            if (a &lt; 0) putchar('-'), a = -a;
-            struct Point {
-                signed char value;
-                Point* last;
-                Point() {
-                    last = NULL;
-                }
-                Point(Point* const last) {
-                    this-&gt;last = last;
-                }
-            };
-            Point *begin(new Point(Point())), *end(begin);
-            while (end-&gt;value = a % 10 + '0', end = new Point(Point(end)), a /= 10);
-            while (end not_eq begin) {
-                Point* const t(end-&gt;last);
-                delete end, putchar((end = t)-&gt;value);
-            }
-            delete begin;
-            space();
-        }
-        template&lt;typename T&gt;
-        inline const void writef(T a, const LLU len = 6, const void (*space)() = nothing) {
-            if (a &lt; 0) putchar('-'), a = -a;
-            write((const LLU)a, dot);
-            for (register LLU i(0); i &lt; len; ++i)
-                write((const LLU)(a *= 10) % 10);
-            space();
-        }
-        template&lt;typename T&gt;
-        inline const void write(const void (*space)(), const LLU count, ...) {
-            va_list list;
-            va_start(list, count);
-            for (register LLU i(0); i &lt; count; ++i) write(va_arg(list, T), space);
-            va_end(list);
-        }
-        template&lt;typename T&gt;
-        inline const void writef(const void (*space)(), const LLU len,  const LLU count, ...) {
-            va_list list;
-            va_start(list, count);
-            for (register LLU i(0); i &lt; count; ++i) writef(va_arg(list, T), len, space);
-            va_end(list);
-        }
-    }
-}
-
-# endif
 </code></pre>
 ]]></content>
     </entry>
