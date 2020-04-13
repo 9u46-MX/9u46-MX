@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-04-13T09:01:18.586Z</updated>
+    <updated>2020-04-13T09:02:16.284Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -12,8 +12,8 @@
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
     <entry>
         <title type="html"><![CDATA[4月13日物理]]></title>
-        <id>https://9u46-mx.github.io/post/4-yue-13-ri-wu-li/</id>
-        <link href="https://9u46-mx.github.io/post/4-yue-13-ri-wu-li/">
+        <id>https://9u46-mx.github.io/post/20-04-13-Physics/</id>
+        <link href="https://9u46-mx.github.io/post/20-04-13-Physics/">
         </link>
         <updated>2020-04-13T08:30:20.000Z</updated>
         <content type="html"><![CDATA[<p class='katex-block'><span class="katex-display"><span class="katex"><span class="katex-mathml"><math><semantics><mrow></mrow><annotation encoding="application/x-tex">\def{\cm}{\operatorname{cm}}\def{\m}{\operatorname{m}}\def{\kg}{\operatorname{kg}}\def{\N}{\operatorname{N}}\def{\Pa}{\operatorname{Pa}}\def{\g}{\operatorname{g}}
