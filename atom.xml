@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-04-16T11:34:51.297Z</updated>
+    <updated>2020-04-16T11:45:20.065Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -24,18 +24,18 @@
 <ol>
 <li>D</li>
 <li>C</li>
-<li>C</li>
+<li><s>C</s> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mi mathvariant="normal">D</mi><mo>⁡</mo></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\operatorname{D}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:red;"><span class="mop" style="color:red;"><span class="mord mathrm" style="color:red;">D</span></span></span></span></span></span> <strong>错误原因：未解决。</strong></li>
 <li>D</li>
 <li>A</li>
-<li>C</li>
+<li><s>C</s> <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mi mathvariant="normal">D</mi><mo>⁡</mo></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\operatorname{D}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:red;"><span class="mop" style="color:red;"><span class="mord mathrm" style="color:red;">D</span></span></span></span></span></span> <strong>错误原因：未解决。</strong></li>
 <li>D</li>
-<li>B</li>
+<li><s>B</s><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mi mathvariant="normal">C</mi><mo>⁡</mo></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\operatorname{C}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:red;"><span class="mop" style="color:red;"><span class="mord mathrm" style="color:red;">C</span></span></span></span></span></span> <strong>错误原因：对文字的把握不够。</strong></li>
 <li>B</li>
 <li>A</li>
 <li>D</li>
 <li>A</li>
 <li>B</li>
-<li>B</li>
+<li><s>B</s><span class="katex"><span class="katex-mathml"><math><semantics><mrow><mstyle mathcolor="red"><mi mathvariant="normal">D</mi><mo>⁡</mo></mstyle></mrow><annotation encoding="application/x-tex">\color{red}{\operatorname{D}}</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.68333em;vertical-align:0em;"></span><span class="mord" style="color:red;"><span class="mop" style="color:red;"><span class="mord mathrm" style="color:red;">D</span></span></span></span></span></span> <strong>错误原因：审题不清。</strong></li>
 <li>B</li>
 <li>D</li>
 <li>B</li>
