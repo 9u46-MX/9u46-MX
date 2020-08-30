@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-    <id>http://localhost:4000</id>
+    <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-08-30T03:27:54.470Z</updated>
+    <updated>2020-08-30T03:33:27.664Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
-    <link rel="alternate" href="http://localhost:4000"/>
-    <link rel="self" href="http://localhost:4000/atom.xml"/>
+    <link rel="alternate" href="https://9u46-mx.github.io/"/>
+    <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
     <subtitle>by 9u46.</subtitle>
-    <logo>http://localhost:4000/images/avatar.png</logo>
-    <icon>http://localhost:4000/favicon.ico</icon>
+    <logo>https://9u46-mx.github.io/images/avatar.png</logo>
+    <icon>https://9u46-mx.github.io/favicon.ico</icon>
     <rights>All rights reserved 2020, 9u46 的小窝</rights>
     <entry>
         <title type="html"><![CDATA[数论初步 学习笔记]]></title>
-        <id>http://localhost:4000/post/shu-lun-chu-bu-xue-xi-bi-ji/</id>
-        <link href="http://localhost:4000/post/shu-lun-chu-bu-xue-xi-bi-ji/">
+        <id>https://9u46-mx.github.io/post/shu-lun-chu-bu-xue-xi-bi-ji/</id>
+        <link href="https://9u46-mx.github.io/post/shu-lun-chu-bu-xue-xi-bi-ji/">
         </link>
         <updated>2020-04-24T12:04:49.000Z</updated>
         <content type="html"><![CDATA[<h1 id="单位函数">单位函数</h1>
@@ -55,8 +55,8 @@
     </entry>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>http://localhost:4000/post/hello-gridea/</id>
-        <link href="http://localhost:4000/post/hello-gridea/">
+        <id>https://9u46-mx.github.io/post/hello-gridea/</id>
+        <link href="https://9u46-mx.github.io/post/hello-gridea/">
         </link>
         <updated>2018-12-11T16:00:00.000Z</updated>
         <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
