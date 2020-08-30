@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
-<title>关于 | 9u46 的小窝</title>
+<title>[Code] Contest S 200830 | 9u46 的小窝</title>
 <link rel="shortcut icon" href="http://localhost:4000/favicon.ico?v=1598794480899">
 <link rel="stylesheet" href="http://localhost:4000/styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="关于" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="[Code] Contest S 200830" />
+    <meta name="keywords" content="代码,模拟赛,2020" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -190,14 +190,9 @@
               <div class="toc-box right-motion">
   <div class="toc-wrapper auto-number auto" id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
-</ul>
-</li>
+<li><a href="#a">A</a></li>
+<li><a href="#b">B</a></li>
+<li><a href="#c">C</a></li>
 </ul>
 
   </div>
@@ -450,8 +445,8 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="http://localhost:4000/post/about/">
-      关于
+    <a class="post-title-link" href="http://localhost:4000/post/code-contest-s-200830/">
+      [Code] Contest S 200830
     </a>
   </h1>
   <div class="post-meta">
@@ -459,30 +454,325 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-01-25</span>
+      <span>2020-08-30</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="http://localhost:4000/tag/k0VMj5ypn/">
+              <span>代码</span>
+            </a>、
+          
+        
+          
+            <a href="http://localhost:4000/tag/80fyw3msV/">
+              <span>模拟赛</span>
+            </a>、
+          
+        
+          
+            <a href="http://localhost:4000/tag/3no_pV6kT5/">
+              <span>2020</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>11分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>31<span class="pc-show">字数</span></span>
+      <span>1759<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                <h1 id="a">A</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# include &lt;ctime&gt;
+
+namespace Sourse {
+  typedef short unsigned int hu;
+  typedef long unsigned int lu;
+  namespace Prime {
+    static inline const bool is(const lu x) {
+      if (x &lt; 2) return false;
+      for (register hu i(2); 1ul * i * i &lt;= x; ++i) if (not(x % i)) return false;
+      return true;
+    }
+  }
+}
+
+namespace Main {
+  using namespace Sourse;
+  static lu l;
+  static hu ans;
+  static inline const void main() {
+    freopen(&quot;calc.in&quot;, &quot;r&quot;, stdin), freopen(&quot;calc.out&quot;, &quot;w&quot;, stdout);
+    scanf(&quot;%lu&quot;, &amp;l);
+    for (register hu i(1); 1ul * i * i * i - 1ul * (i - 1) * (i - 1) * (i - 1) &lt;= l; ++i)
+      ans += Prime::is(3ul * i * i - 3ul * i + 1ul);
+    printf(&quot;%hu\n&quot;, ans);
+    // printf(&quot;%lu\n&quot;, clock());
+    fclose(stdin), fclose(stdout);
+  }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="b">B</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cctype&gt;
+# include &lt;cstdio&gt;
+# include &lt;ctime&gt;
+# include &lt;algorithm&gt;
+
+namespace Main {
+  namespace Sourse {
+    typedef short signed int hd;
+    typedef long signed int ld;
+    typedef short unsigned int hu;
+    typedef long unsigned int lu;
+    enum { N = 500000 };
+    using std::lower_bound;
+    using std::upper_bound;
+    using std::sort;
+    static inline const lu lowbit(const lu x) { return x bitand ~x + 1; }
+    class BIT {
+      ld tree[N + 1];
+      inline const void modify(lu x, const ld d) {
+	if (not x) { tree[x] += d; return; }
+	while (x &lt;= N) tree[x] += d, x += lowbit(x);
+      }
+      inline const void modify(lu l, const lu r, const ld d, const signed int)
+      { if (not l) modify(0, d), modify(1, d); else modify(l, d); modify(r + 1, -d); }
+    public:
+      BIT() { for (register lu i(0); i &lt;= N; ++i) tree[i] = 0; }
+      inline const void modify(const lu l, const lu r, const lu t) { modify(l, r, t - query(l), 0); }
+      inline const lu query(lu x) const
+      { if (x == 0) return tree[0]; ld r(0); while (x) r += tree[x], x ^= lowbit(x); return r; }
+    };
+    static const class iostream {
+    public:
+      inline const iostream&amp; operator&gt;&gt;(hd&amp; a) const {
+	char t; bool m(false);
+	while (not isdigit(t = getchar())) if (t == '-') m = !m;
+	a = m ? '0' - t : t - '0';
+	return *this;
+      }
+      inline const iostream&amp; operator&gt;&gt;(ld&amp; a) const {
+	char t;
+	while (isspace(t = getchar()));
+	a = 0;
+	while (a = a * 10 + (t - '0'), isdigit(t = getchar()));
+	return *this;
+      }
+      inline const iostream&amp; operator&gt;&gt;(hu&amp; a) const {
+	char t;
+	while (isspace(t = getchar()));
+	a = 0;
+	while (a = a * 10 + (t - '0'), isdigit(t = getchar()));
+	return *this;
+      }
+      inline const iostream&amp; operator&gt;&gt;(lu&amp; a) const {
+	char t;
+	while (isspace(t = getchar()));
+	a = 0;
+	while (a = a * 10 + (t - '0'), isdigit(t = getchar()));
+	return *this;
+      }
+      inline const iostream&amp; operator&lt;&lt;(lu x) const {
+	static char s[20]; hu l(0);
+	while (s[l++] = x % 10 + '0', x /= 10);
+	while (l) putchar(s[--l]);
+	putchar('\n');
+	return *this;
+      }
+    } io;
+  }
+  using namespace Sourse;
+  static lu n, m;
+  static ld a[N + 1];
+  static ld s[N + 1];
+  static bool h[N + 1];
+  static BIT bit, pre, suf;
+  static inline const void insert(const lu x) {
+    if (h[x]) return; h[x] = true;
+    const lu p(pre.query(x)), s(suf.query(x));
+    bit.modify(x, s - 1, x);
+    suf.modify(p, x - 1, x), pre.modify(x + 1, s, x);
+  }
+  static inline const void erase(const lu x) {
+    if (not h[x]) return; h[x] = false;
+    const lu p(pre.query(x)), s(suf.query(x));
+    bit.modify(x, s - 1, p);
+    suf.modify(p, x - 1, s), pre.modify(x + 1, s, p);
+  }
+  static inline const void modify(const lu x, const hd d) {
+    const ld t(a[x]), u(a[x] += d);
+    const lu p((d == 1 ? upper_bound(s + 1, s + n + 1, t) - 1 : lower_bound(s + 1, s + n + 1, t)) - s);
+    s[p] += d;
+    if (p &lt; n and s[p] != s[p + 1] and s[p] != p) insert(p);
+    else erase(p);
+    if (p &gt; 1 and s[p] != s[p - 1] and s[p - 1] != p - 1) insert(p - 1);
+    else erase(p - 1);
+  }
+  static inline const void query(const lu x) { io &lt;&lt; bit.query(x); }
+  static inline const void init() {
+    io &gt;&gt; n &gt;&gt; m;
+    // io &lt;&lt; n &lt;&lt; m;
+    for (register lu i(1); i &lt;= n; ++i) io &gt;&gt; a[i], s[i] = a[i]/*, *//*io &lt;&lt; a[i]*/;
+    sort(s + 1, s + n + 1);
+    pre.modify(0, n, 0), suf.modify(0, n, n + 1), h[0] = true;
+    for (register lu i(1); i &lt; n; ++i) if (s[i] != s[i + 1] and s[i] != i) insert(i);
+    if (s[n] != n) insert(n);
+  }
+  //static inline const void check() {
+  //	puts(&quot;\nArray&quot;);
+  //	for (register lu i(1); i &lt;= n; ++i) printf(&quot;%ld &quot;, a[i]);
+  //	puts(&quot;\nSorted&quot;);
+  //	for (register lu i(1); i &lt;= n; ++i) printf(&quot;%ld &quot;, s[i]);
+  //	puts(&quot;\nInserted&quot;);
+  //	for (register lu i(0); i &lt;= n; ++i) putchar(h[i] ? 'T' : 'F');
+  //	puts(&quot;\nAnswer&quot;);
+  //	for (register lu i(1); i &lt;= n; ++i) printf(&quot;%lu &quot;, bit.query(i));
+  //	puts(&quot;\nPre&quot;);
+  //	for (register lu i(0); i &lt;= n; ++i) printf(&quot;%lu &quot;, pre.query(i));
+  //	puts(&quot;\nSuf&quot;);
+  //	for (register lu i(0); i &lt;= n; ++i) printf(&quot;%lu &quot;, suf.query(i));
+  //	puts(&quot;\n&quot;);
+  //}
+  static inline const void main() {
+    freopen(&quot;seq.in&quot;, &quot;r&quot;, stdin);
+    freopen(&quot;seq.out&quot;, &quot;w&quot;, stdout);
+    init();
+    for (register lu i(0); i &lt; m; ++i) {
+      static hu op; io &gt;&gt; op; // putchar('\n');
+      /*printf(&quot;Begin: %lu\n&quot;, i);*/
+      switch (op) {
+      case 1: { static lu x; io &gt;&gt; x; /*printf(&quot;%hu %lu\n&quot;, op, x);*/  query(upper_bound(s + 1, s + n + 1, x) - 1 - s); break; }
+      case 2: { static lu x; static hd y; io &gt;&gt; x &gt;&gt; y; /*printf(&quot;%hu %lu %hd\n&quot;, op, x, y);*/ modify(x, y); break; }
+      }
+      // putchar('\n');
+      //check();
+    }
+    // printf(&quot;%lu\n&quot;, clock());
+    fclose(stdin), fclose(stdout);
+  }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="c">C</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;climits&gt;
+# include &lt;cstdio&gt;
+# include &lt;cstring&gt;
+# include &lt;ctime&gt;
+# include &lt;algorithm&gt;
+# include &lt;vector&gt;
+
+namespace Sourse {
+  typedef short unsigned int hu;
+  typedef long unsigned int lu;
+  typedef std::vector&lt;hu&gt; vector;
+  enum { N = 20, S = 14 };
+  using std::swap;
+  static inline const void amin(lu&amp; a, const lu b) { if (a &gt; b) a = b; }
+}
+
+namespace Solve {
+  using namespace Sourse;
+  static hu n;
+  static lu a[N + 1];
+  static hu size[N + 1];
+  static vector o[N + 1];
+  static hu s1, s2;
+  static lu p1, p2;
+  static lu f[N + 1][N + 1][S + 1];
+  static hu ans;
+  static lu maxs;
+  static inline const void search_i(const hu x = 1, const hu m = 0) {
+    //for (hu i(0); i &lt;= n; ++i) printf(&quot;%lu &quot;, o[i].size());
+    //printf(&quot;%hu %lu\n&quot;, x, o[x].size());
+    size[x] = 1;
+    for (hu i(0); i &lt; o[x].size(); ++i)
+      if (o[x][i] not_eq m) search_i(o[x][i], x), size[x] += size[o[x][i]];
+  }
+  static inline const void search(const lu k, const hu x = 1, const hu m = 0) {
+    for (hu i(0); i &lt; o[x].size(); ++i) if (o[x][i] not_eq m) search(k, o[x][i], x);
+    memset(f[x], 0x7f, sizeof f[x]);
+    for (hu i(0); i &lt;= s1; ++i) f[x][0][i] = 0;
+    for (hu i(0); i &lt;= s1; ++i)
+      if (1ull * i * p1 &lt; a[x] ? (p2 - (a[x] - i * p1) % p2) % p2 &lt;= k : 1ull * i * p1 - a[x] &lt;= k)
+	f[x][1][i] = 1ull * i * p1 &lt; a[x] ? (a[x] - i * p1 + p2 - 1) / p2 : 0;
+    for (hu i(0); i &lt; o[x].size(); ++i) {
+      if (o[x][i] == m) continue;
+      for (hu j(size[x]); j; --j)
+	for (hu k(s1); k &lt;= s1; --k)
+	  for (hu l(0); l &lt; j; ++l)
+	    for (hu m(0); m &lt;= k; ++m)
+	      amin(f[x][j][k], f[x][j - l][k - m] + f[o[x][i]][l][m]);
+    }
+  }
+  static inline const bool check(const lu k) {
+    //printf(&quot;Begin check %lu\n&quot;, k);
+    search(k);
+    //printf(&quot;search(%lu)\n&quot;, k);
+    //for (hu i(1); i &lt;= n; ++i)
+    //	for (hu j(0); j &lt;= size[i]; ++j)
+    //		printf(&quot;f(%hu, %hu, %hu) - %lu\n&quot;, i, j, s1, f[i][j][s1]);
+    for (hu i(0); i &lt;= s1; ++i) if (f[1][ans][i] &lt;= s2) return true;
+    return false;
+  }
+  static inline const void main() {
+    scanf(&quot;%hu&quot;, &amp;n);
+    for (hu i(1); i &lt;= n; ++i) o[i].clear();
+    for (hu i(1); i &lt;= n; ++i) scanf(&quot;%lu&quot;, &amp;a[i]);
+    //for (hu i(0); i &lt;= n; ++i) printf(&quot;%lu &quot;, o[i].size());
+    //putchar('\n');
+    for (hu i(1); i &lt; n; ++i)
+      { static hu x, y; scanf(&quot;%hu%hu&quot;, &amp;x, &amp;y); o[x].push_back(y), o[y].push_back(x); }
+    //for (hu i(0); i &lt;= n; ++i) printf(&quot;%lu &quot;, o[i].size());
+    search_i();
+    scanf(&quot;%hu%hu%lu%lu&quot;, &amp;s1, &amp;s2, &amp;p1, &amp;p2);
+    if (s2 &lt; s1) swap(s1, s2), swap(p1, p2);
+    //printf(&quot;Begin check %lu\n&quot;, ULONG_MAX);
+    search(ULONG_MAX);
+    for (hu i(0); i &lt;= n; ++i)
+      for (hu j(0); j &lt;= s1; ++j)
+	if (f[1][i][j] &lt;= s2)
+	  ans = i;
+    if (check(0)) return (const void)printf(&quot;%hu 0\n&quot;, ans);
+    lu l(0), r(ULONG_MAX);
+    while (r - l &gt; 1) (check((0ull + l + r) / 2) ? r : l) = (0ull + l + r) / 2;
+    printf(&quot;%hu %lu\n&quot;, ans, maxs = r);
+  }
+}
+
+namespace Main {
+  using namespace Sourse;
+  static hu t;
+  static inline const void main() {
+    freopen(&quot;system.in&quot;, &quot;r&quot;, stdin), freopen(&quot;system.out&quot;, &quot;w&quot;, stdout);
+    scanf(&quot;%hu&quot;, &amp;t); for (hu i(0); i &lt; t; ++i) Solve::main();
+    // printf(&quot;%lu\n&quot;, clock());
+    fclose(stdin), fclose(stdout);
+  }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
 
               </div>
               <div class="post-footer">
@@ -493,7 +783,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="http://localhost:4000/post/about/" title="关于">关于</a>
+      <a href="http://localhost:4000/post/code-contest-s-200830/" title="[Code] Contest S 200830">[Code] Contest S 200830</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -501,6 +791,12 @@ window.addEventListener('load', function() {
     </li>
   </ul>
   <div class="tags">
+    
+      <a href="http://localhost:4000/tag/k0VMj5ypn/"># 代码</a>
+    
+      <a href="http://localhost:4000/tag/80fyw3msV/"># 模拟赛</a>
+    
+      <a href="http://localhost:4000/tag/3no_pV6kT5/"># 2020</a>
     
   </div>
   <div class="nav">
