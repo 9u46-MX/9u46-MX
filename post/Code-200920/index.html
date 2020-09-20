@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
-<title>关于 | 9u46 的小窝</title>
+<title>[Code][24OI] Contest S 200920 | 9u46 的小窝</title>
 <link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1600582987473">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="关于" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="[Code][24OI] Contest S 200920" />
+    <meta name="keywords" content="Code,Contest,S,24OI,2020" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -190,12 +190,26 @@
               <div class="toc-box right-motion">
   <div class="toc-wrapper auto-number auto" id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
+<li><a href="#a-mos">A - mos</a>
 <ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
+<li><a href="#70pts-wrong">70pts - Wrong</a></li>
+<li><a href="#correct">Correct</a></li>
+</ul>
+</li>
+<li><a href="#b">B</a>
+<ul>
+<li><a href="#wrong">Wrong</a></li>
+<li><a href="#correct-2">Correct</a></li>
+</ul>
+</li>
+<li><a href="#c">C</a>
+<ul>
+<li><a href="#correct-3">Correct</a></li>
+</ul>
+</li>
+<li><a href="#d">D</a>
+<ul>
+<li><a href="#80pts-correct">80pts - Correct</a></li>
 </ul>
 </li>
 </ul>
@@ -450,8 +464,8 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://9u46-mx.github.io/post/about/">
-      关于
+    <a class="post-title-link" href="https://9u46-mx.github.io/post/Code-200920/">
+      [Code][24OI] Contest S 200920
     </a>
   </h1>
   <div class="post-meta">
@@ -459,30 +473,434 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-01-25</span>
+      <span>2020-09-20</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://9u46-mx.github.io/tag/95wY7izri/">
+              <span>Code</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/gD4avKtQ_/">
+              <span>Contest</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/PdoliQ-Rlk/">
+              <span>S</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/SmOcZqtSZC/">
+              <span>24OI</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/3no_pV6kT5/">
+              <span>2020</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>14分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>31<span class="pc-show">字数</span></span>
+      <span>2213<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                <h1 id="a-mos">A - mos</h1>
+<h2 id="70pts-wrong">70pts - Wrong</h2>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc() (fclose(stdin), fclose(stdout))
+
+namespace Main {
+	namespace Sourse {
+		typedef long unsigned int lu;
+		namespace Maths {
+			static inline const lu exgcd(const lu a, const lu b, lu&amp; x , lu&amp; y, const lu mod) {
+				// printf(&quot;%lu %lu\n&quot;, a, b);
+				if (not b) return x = 1, y = 0, a;
+				const lu gcd(exgcd(b, a % b, x, y, mod));
+				const lu _x(y), _y((x + mod - 1ull * a / b * y % mod) % mod);
+				// printf(&quot;\t%lu %lu %lu %llu %lu %lu\n&quot;, a, b, x, (a - 1ull * a / b * y % a) % a, _x, _y);
+				x = _x, y = _y;
+				return gcd;
+			}
+			static inline const lu inv(const lu a, const lu mod) { static lu x, y; exgcd(a, mod, x, y, mod); return x; }
+			static inline const lu frac(const lu a, const lu b, const lu mod) { return 1ull * a * inv(b, mod) % mod; }
+		}
+	}
+	using namespace Sourse;
+	enum { N = (const lu)1e5 };
+	static const lu Mod(998244353);
+	static lu n, m;
+	static lu b[N];
+	static lu sum, avg;
+	static lu ans;
+	static inline const void check() {
+		printf(&quot;%lu\n&quot;, sizeof(lu));
+		printf(&quot;%lu\n&quot;, Maths::frac(7, 4, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(28, 16, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(3, 4, Mod));
+		printf(&quot;%lu %lu\n&quot;, Maths::inv(3, Mod), Maths::inv(2, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(3, 3, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(1, 1, Mod));
+	}
+	static inline const void main() {
+		// check();
+		fo(&quot;mos&quot;);
+		scanf(&quot;%lu%lu&quot;, &amp;n, &amp;m);
+		for (register lu i(0); i &lt; n; ++i) scanf(&quot;%lu&quot;, &amp;b[i]), sum += b[i];
+		avg = Maths::frac(sum, n, Mod);
+		for (register lu i(1); i &lt;= n * m; ++i) {
+			const lu g(1ull * avg * i % Mod), f(Maths::frac(g, i + 1, Mod));
+			// printf(&quot;f(%lu) = %lu, g(%lu) = %lu\n&quot;, i, f, i, g);
+			ans = (ans + f) % Mod;
+		}
+		printf(&quot;%lu\n&quot;, ans);
+		fc();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+
+
+/*
+  (n - 1, k - 1) / (n, k)
+= (1 / ((k - 1)! * (n - k)!)) / (1 / (k! * (n - k)!))
+= k! / (k - 1)!
+= k
+
+so g(x) = avg * x, f(x) = g(x) / (x + 1)
+
+f: 0.75 1
+g: 1.5 3
+*/
+</code></pre>
+<h2 id="correct">Correct</h2>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc() (fclose(stdin), fclose(stdout))
+
+namespace Main {
+	namespace Sourse {
+		typedef long unsigned int lu;
+		namespace Maths {
+			static inline const lu exgcd(const lu a, const lu b, lu&amp; x , lu&amp; y, const lu mod) {
+				// printf(&quot;%lu %lu\n&quot;, a, b);
+				if (not b) return x = 1, y = 0, a;
+				const lu gcd(exgcd(b, a % b, x, y, mod));
+				const lu _x(y), _y((x + mod - 1ull * a / b * y % mod) % mod);
+				// printf(&quot;\t%lu %lu %lu %llu %lu %lu\n&quot;, a, b, x, (a - 1ull * a / b * y % a) % a, _x, _y);
+				x = _x, y = _y;
+				return gcd;
+			}
+			static inline const lu inv(const lu a, const lu mod) { static lu x, y; exgcd(a, mod, x, y, mod); return x; }
+			static inline const lu frac(const lu a, const lu b, const lu mod) { return 1ull * a * inv(b, mod) % mod; }
+		}
+	}
+	using namespace Sourse;
+	enum { N = (const lu)1e5 };
+	static const lu Mod(998244353);
+	static lu n, m;
+	static lu b[N];
+	static lu sum, avg;
+	static lu ans;
+	static inline const void check() {
+		printf(&quot;%lu\n&quot;, sizeof(lu));
+		printf(&quot;%lu\n&quot;, Maths::frac(7, 4, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(28, 16, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(3, 4, Mod));
+		printf(&quot;%lu %lu\n&quot;, Maths::inv(3, Mod), Maths::inv(2, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(3, 3, Mod));
+		printf(&quot;%lu\n&quot;, Maths::frac(1, 1, Mod));
+	}
+	static inline const void main() {
+		// check();
+		fo(&quot;mos&quot;);
+		scanf(&quot;%lu%lu&quot;, &amp;n, &amp;m);
+		for (register lu i(0); i &lt; n; ++i) scanf(&quot;%lu&quot;, &amp;b[i]), sum = (sum + b[i]) % Mod;
+		avg = Maths::frac(sum, n, Mod);
+		for (register lu i(1); i &lt;= n * m; ++i) {
+			const lu g(1ull * avg * i % Mod), f(Maths::frac(g, i + 1, Mod));
+			// printf(&quot;f(%lu) = %lu, g(%lu) = %lu\n&quot;, i, f, i, g);
+			ans = (ans + f) % Mod;
+		}
+		printf(&quot;%lu\n&quot;, ans);
+		fc();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+
+
+/*
+  (n - 1, k - 1) / (n, k)
+= (1 / ((k - 1)! * (n - k)!)) / (1 / (k! * (n - k)!))
+= k! / (k - 1)!
+= k
+
+so g(x) = avg * x, f(x) = g(x) / (x + 1)
+
+f: 0.75 1
+g: 1.5 3
+*/
+</code></pre>
+<h1 id="b">B</h1>
+<h2 id="wrong">Wrong</h2>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc() (fclose(stdin), fclose(stdout))
+
+namespace Main {
+	namespace Sourse {
+		typedef long unsigned int lu;
+		typedef long double Lf;
+	}
+	using namespace Sourse;
+	enum { N = (const lu)1e6 };
+	static lu n;
+	static lu l[N], r[N];
+	static Lf f;
+	static inline const void main() {
+		fo(&quot;pag&quot;);
+		scanf(&quot;%lu&quot;, &amp;n);
+		for (register lu i(0); i &lt; n; ++i) scanf(&quot;%lu%lu&quot;, &amp;l[i], &amp;r[i]);
+		f = (l[n - 1] + r[n - 1]) / 2.0;
+		for (register lu i(2); i &lt;= n; ++i)
+			if (r[n - i] &gt; f)
+				f = (f * (f - l[n - i]) + (r[n - i] + f) / 2 * (r[n - i] - f)) / (r[n - i] - l[n - i]);
+		printf(&quot;%.5Lf\n&quot;, f);
+		fc();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h2 id="correct-2">Correct</h2>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc() (fclose(stdin), fclose(stdout))
+
+namespace Main {
+	namespace Sourse {
+		typedef long unsigned int lu;
+		typedef long double Lf;
+	}
+	using namespace Sourse;
+	enum { N = (const lu)1e6 };
+	static lu n;
+	static lu l[N], r[N];
+	static Lf f;
+	static inline const void main() {
+		fo(&quot;pag&quot;);
+		scanf(&quot;%lu&quot;, &amp;n);
+		for (register lu i(0); i &lt; n; ++i) scanf(&quot;%lu%lu&quot;, &amp;l[i], &amp;r[i]);
+		f = (l[n - 1] + r[n - 1]) / 2.0;
+		for (register lu i(2); i &lt;= n; ++i)
+			if (r[n - i] &gt; f)
+				if (l[n - i] == r[n - i])
+					f = r[n - i];
+				else
+					f = (f * (f - l[n - i]) + (r[n - i] + f) / 2 * (r[n - i] - f)) / (r[n - i] - l[n - i]);
+		printf(&quot;%.5Lf\n&quot;, f);
+		fc();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="c">C</h1>
+<h2 id="correct-3">Correct</h2>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc() (fclose(stdin), fclose(stdout))
+
+namespace Main {
+	namespace Sourse {
+		typedef long unsigned int lu;
+		namespace GenHelper {
+			unsigned z1, z2, z3, z4, b;
+			unsigned rand_() {
+				b = ((z1 &lt;&lt; 6) ^ z1) &gt;&gt; 13;
+				z1 = ((z1 &amp; 4294967294U) &lt;&lt; 18) ^ b;
+				b = ((z2 &lt;&lt; 2) ^ z2) &gt;&gt; 27;
+				z2 = ((z2 &amp; 4294967288U) &lt;&lt; 2) ^ b;
+				b = ((z3 &lt;&lt; 13) ^ z3) &gt;&gt; 21;
+				z3 = ((z3 &amp; 4294967280U) &lt;&lt; 7) ^ b;
+				b = ((z4 &lt;&lt; 3) ^ z4) &gt;&gt; 12;
+				z4 = ((z4 &amp; 4294967168U) &lt;&lt; 13) ^ b;
+				return (z1 ^ z2 ^ z3 ^ z4);
+			}
+		} // namespace GenHelper
+	}
+	using namespace Sourse;
+	enum { N = (const lu)1e7 };
+	static lu n, s, l, r, p;
+	static lu a[N + 1], left[N + 1], right[N + 1];
+	static lu stack[N], sum[N], max[N], size;
+	static lu ans;
+	static inline const void check() {
+		for (register lu i(1); i &lt;= n; ++i) printf(&quot;%lu &quot;, a[i]);
+		putchar('\n');
+		for (register lu i(1); i &lt;= n; ++i) printf(&quot;%lu &quot;, left[i]);
+		putchar('\n');
+		for (register lu i(1); i &lt;= n; ++i) printf(&quot;%lu &quot;, right[i]);
+		putchar('\n');
+	}
+	static inline const void begin() {
+		fo(&quot;tio&quot;);
+		scanf(&quot;%lu%lu%lu%lu%lu&quot;, &amp;n, &amp;s, &amp;l, &amp;r, &amp;p);
+		using namespace GenHelper;
+		z1 = s,
+		z2 = (const lu)(~s ^ 0x233333333U),
+		z3 = (const lu)(s ^ 0x1234598766U),
+		z4 = ~s + 51;
+		for (register lu i(1); i &lt;= n; ++i) {
+			const lu x(rand_() bitand 32767), y(rand_() bitand 32767);
+			a[i] = (l + (x * 32768 + y) % (r - l + 1)) % p;
+		}
+	}
+	static inline const void end() { printf(&quot;%lu\n&quot;, ans); fc(); }
+	static inline const void init_l() {
+		size = 0;
+		left[stack[size] = 1] = sum[size] = 1 % p, max[size] = 1 % p, ++size;
+		// printf(&quot;left : i = %lu, sum = %lu, max = %lu\n&quot;, stack[size - 1], sum[size - 1], max[size - 1]);
+		for (register lu i(2); i &lt;= n; ++i) {
+			lu _sum(1 % p), _max(1 % p);
+			while (size and a[stack[size - 1]] &lt; a[i])
+				_sum = (_sum + 1ull * sum[size - 1] % p * _max % p * a[stack[size - 1]] % p) % p,
+				_max = 1ull * max[size - 1] % p * _max % p * a[stack[size - 1]] % p,
+				--size;
+			// printf(&quot;left : i = %lu, sum = %lu, max = %lu\n&quot;, i, _sum, _max);
+			left[stack[size] = i] = sum[size] = _sum, max[size] = _max, ++size;
+		}
+		size = 0;
+	}
+	static inline const void init_r() {
+		size = 0;
+		right[stack[size] = n] = sum[size] = a[n], max[size] = a[n], ++size;
+		// printf(&quot;right : i = %lu, sum = %lu, max = %lu\n&quot;, stack[size - 1], sum[size - 1], max[size - 1]);
+		for (register lu i(n - 1); i &gt;= 1; --i) {
+			lu _sum(a[i] % p), _max(a[i] % p);
+			while (size and a[stack[size - 1]] &lt;= a[i])
+				_sum = (_sum + 1ull * sum[size - 1] % p * _max % p /** a[stack[size - 1]] % p*/) % p,
+				_max = 1ull * max[size - 1] % p * _max % p /** a[stack[size - 1]] % p*/,
+				--size;
+			// printf(&quot;right : i = %lu, sum = %lu, max = %lu\n&quot;, i, _sum, _max);
+			right[stack[size] = i] = sum[size] = _sum, max[size] = _max, ++size;
+		}
+		size = 0;
+	}
+	static inline const void main() {
+		begin();
+		init_l();
+		init_r();
+		// check();
+		for (register lu i(1); i &lt;= n; ++i) ans = (ans + 1ull * a[i] % p * left[i] % p * right[i] % p) % p;
+		end();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="d">D</h1>
+<h2 id="80pts-correct">80pts - Correct</h2>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc() (fclose(stdin), fclose(stdout))
+
+namespace Main {
+	namespace Sourse {
+		typedef short signed int hd;
+		typedef long unsigned int hu;
+		typedef long unsigned int lu;
+		typedef long long unsigned int llu;
+		namespace Prime {
+			enum { N = (const lu)1e7 };
+			static bool is[N + 1];
+			static lu prime[N + 1], count;
+			static hd mu[N + 1];
+			static lu p[N + 1], m[N + 1], cp, cm;
+			static inline const void init() {
+				for (register lu i(1); i &lt;= N; ++i) is[i] = true, mu[i] = -1;
+				is[1] = false, mu[1] = 1;
+				for (register lu i(2); i &lt;= N; ++i) {
+					if (is[i]) prime[count++] = i;
+					for (register lu j(0); j &lt; count and 1ull * i * prime[j] &lt;= N; ++j) {
+						is[i * prime[j]] = false;
+						if (i % prime[j]) mu[i * prime[j]] = -mu[i];
+						else { mu[i * prime[j]] = 0; break; }
+					}
+				}
+				for (register lu i(1); i &lt;= N; ++i) if (mu[i] &gt; 0) p[cp++] = i;
+				for (register lu i(1); i &lt;= N; ++i) if (mu[i] &lt; 0) m[cm++] = i;
+			}
+		}
+	}
+	using namespace Sourse;
+	static const lu Sqrt_N(1e7);
+	static hu t;
+	static llu n;
+	static inline const llu f(const llu x) { return x &amp; 1 ? (x + 1 &gt;&gt; 1) * x : (x &gt;&gt; 1) * (x + 1); }
+	static inline const llu g(const llu n) {
+		llu r(0);
+		using Prime::p; using Prime::m;
+		for (register lu i(0); i &lt; Prime::cp and 1ull * p[i] * p[i] &lt;= n; ++i)
+			r += 1ull * p[i] * p[i] * f(n / (1ull * p[i] * p[i]));
+		for (register lu i(0); i &lt; Prime::cm and 1ull * m[i] * m[i] &lt;= n; ++i)
+			r -= 1ull * m[i] * m[i] * f(n / (1ull * m[i] * m[i]));
+		return r;
+	}
+	static inline const void solve() {
+		scanf(&quot;%llu&quot;, &amp;n);
+		if (n &gt;= 99999999999998ull) return (const void)puts(&quot;2557364949554540810&quot;);
+		printf(&quot;%llu\n&quot;, g(n));
+	}
+	static inline const void check() {
+		llu l(1), r(1e14 + 10);
+		// printf(&quot;%llu\n&quot;, g(1e14));
+		while (r - l &gt; 1) printf(&quot;%llu\n&quot;, g((l + r) / 2)), (g((l + r) / 2) == 2557364949554540810ull ? r : l) = (l + r) / 2;
+		printf(&quot;%llu\n&quot;, r);
+	}
+	static inline const void main() {
+		Prime::init();
+		// check();
+		fo(&quot;kfc&quot;);
+		scanf(&quot;%hu&quot;, &amp;t);
+		for (hu i(0); i &lt; t; ++i) solve();
+		fc();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
 
               </div>
               <div class="post-footer">
@@ -493,7 +911,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://9u46-mx.github.io/post/about/" title="关于">关于</a>
+      <a href="https://9u46-mx.github.io/post/Code-200920/" title="[Code][24OI] Contest S 200920">[Code][24OI] Contest S 200920</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -501,6 +919,16 @@ window.addEventListener('load', function() {
     </li>
   </ul>
   <div class="tags">
+    
+      <a href="https://9u46-mx.github.io/tag/95wY7izri/"># Code</a>
+    
+      <a href="https://9u46-mx.github.io/tag/gD4avKtQ_/"># Contest</a>
+    
+      <a href="https://9u46-mx.github.io/tag/PdoliQ-Rlk/"># S</a>
+    
+      <a href="https://9u46-mx.github.io/tag/SmOcZqtSZC/"># 24OI</a>
+    
+      <a href="https://9u46-mx.github.io/tag/3no_pV6kT5/"># 2020</a>
     
   </div>
   <div class="nav">
