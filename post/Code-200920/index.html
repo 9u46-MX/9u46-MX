@@ -7,7 +7,7 @@
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
 <title>[Code][24OI] Contest S 200920 | 9u46 的小窝</title>
-<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1600585565161">
+<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1600588522695">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
 <link rel="stylesheet" href="/media/css/pisces.css">
@@ -192,13 +192,13 @@
     <ul class="markdownIt-TOC">
 <li><a href="#a-mos">A - mos</a>
 <ul>
-<li><a href="#70pts-wrong">70pts - Wrong</a></li>
+<li><a href="#wrong">Wrong</a></li>
 <li><a href="#correct">Correct</a></li>
 </ul>
 </li>
-<li><a href="#b">B</a>
+<li><a href="#b-pag">B - pag</a>
 <ul>
-<li><a href="#wrong">Wrong</a></li>
+<li><a href="#70pts-wrong">70pts - Wrong</a></li>
 <li><a href="#correct-2">Correct</a></li>
 </ul>
 </li>
@@ -521,14 +521,14 @@ window.addEventListener('load', function() {
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>2213<span class="pc-show">字数</span></span>
+      <span>2131<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
                 <h1 id="a-mos">A - mos</h1>
-<h2 id="70pts-wrong">70pts - Wrong</h2>
+<h2 id="wrong">Wrong</h2>
 <pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
 # include &lt;cstdio&gt;
 # define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
@@ -608,17 +608,13 @@ namespace Main {
 	namespace Sourse {
 		typedef long unsigned int lu;
 		namespace Maths {
-			static inline const lu exgcd(const lu a, const lu b, lu&amp; x , lu&amp; y, const lu mod) {
-				// printf(&quot;%lu %lu\n&quot;, a, b);
-				if (not b) return x = 1, y = 0, a;
-				const lu gcd(exgcd(b, a % b, x, y, mod));
-				const lu _x(y), _y((x + mod - 1ull * a / b * y % mod) % mod);
-				// printf(&quot;\t%lu %lu %lu %llu %lu %lu\n&quot;, a, b, x, (a - 1ull * a / b * y % a) % a, _x, _y);
-				x = _x, y = _y;
-				return gcd;
+			enum { N = (const lu)2e7 + 1 };
+			static lu inv[N + 1];
+			static inline const void init(const lu mod) {
+				inv[1] = 1;
+				for (register lu i(2); i &lt;= N; ++i) inv[i] = 1ull * (mod - mod / i) * inv[mod % i] % mod;
 			}
-			static inline const lu inv(const lu a, const lu mod) { static lu x, y; exgcd(a, mod, x, y, mod); return x; }
-			static inline const lu frac(const lu a, const lu b, const lu mod) { return 1ull * a * inv(b, mod) % mod; }
+			static inline const lu frac(const lu a, const lu b, const lu mod) { return 1ull * a * inv[b] % mod; }
 		}
 	}
 	using namespace Sourse;
@@ -633,11 +629,11 @@ namespace Main {
 		printf(&quot;%lu\n&quot;, Maths::frac(7, 4, Mod));
 		printf(&quot;%lu\n&quot;, Maths::frac(28, 16, Mod));
 		printf(&quot;%lu\n&quot;, Maths::frac(3, 4, Mod));
-		printf(&quot;%lu %lu\n&quot;, Maths::inv(3, Mod), Maths::inv(2, Mod));
 		printf(&quot;%lu\n&quot;, Maths::frac(3, 3, Mod));
 		printf(&quot;%lu\n&quot;, Maths::frac(1, 1, Mod));
 	}
 	static inline const void main() {
+		Maths::init(Mod);
 		// check();
 		fo(&quot;mos&quot;);
 		scanf(&quot;%lu%lu&quot;, &amp;n, &amp;m);
@@ -668,8 +664,8 @@ f: 0.75 1
 g: 1.5 3
 */
 </code></pre>
-<h1 id="b">B</h1>
-<h2 id="wrong">Wrong</h2>
+<h1 id="b-pag">B - pag</h1>
+<h2 id="70pts-wrong">70pts - Wrong</h2>
 <pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
 # include &lt;cstdio&gt;
 # define fo(f) (freopen(f&quot;.in&quot;, &quot;r&quot;, stdin), freopen(f&quot;.out&quot;, &quot;w&quot;, stdout))
