@@ -1966,29 +1966,29 @@ body {
       background: #f9f9f9;
       color: rgba(0, 0, 0, 0.98);
     }.markdownIt-TOC a {
-      color: #eee;
-      border-bottom-color: #eee;
+      color: #fcc2d7;
+      border-bottom-color: #fcc2d7;
     }.markdownIt-TOC a:hover {
-      color: #fff;
-      border-bottom-color: #fff;
+      color: #eebefa;
+      border-bottom-color: #eebefa;
     }.active-current > a {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #ffc9c9 !important;
+      border-bottom-color: #ffc9c9 !important;
     }
     .sidebar-title-active {
-      color: #fc6423 !important;
-      border-bottom-color: #fc6423 !important;
+      color: #ffc9c9;
+      border-bottom-color: #ffc9c9;
     }
     .sidebar-title-item:hover {
-      color: #fc6423 !important;
+      color: #ffc9c9 !important;
     }
     .active-show > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #ffc9c9;
+      border-bottom-color: #ffc9c9;
     }
     .active-hidden > a {
-      color: #fc6423;
-      border-bottom-color: #fc6423;
+      color: #ffc9c9;
+      border-bottom-color: #ffc9c9;
     }
       .site-meta {
         background: #000 !important;
