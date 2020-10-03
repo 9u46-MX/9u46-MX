@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://9u46-mx.github.io/</id>
     <title>9u46 的小窝</title>
-    <updated>2020-10-03T09:51:08.532Z</updated>
+    <updated>2020-10-03T09:52:36.820Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://9u46-mx.github.io/"/>
     <link rel="self" href="https://9u46-mx.github.io/atom.xml"/>
@@ -59,6 +59,7 @@ s_i &amp;= s_{i, 1}.\cr
 <p>换根 DP 即可。<br>
 时空复杂度 <span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>O</mi><mo>(</mo><mi>n</mi><mo>)</mo></mrow><annotation encoding="application/x-tex">O(n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.02778em;">O</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，期望得分 100pts。<br>
 <s>两道换根毒瘤QAQ</s></p>
+<h1 id="code"><a href="https://9u46-mx.github.io/post/Code-201003/">Code</a></h1>
 ]]></content>
     </entry>
     <entry>
