@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
-<title>关于 | 9u46 的小窝</title>
+<title>[Code] Contest S 201017 | 9u46 的小窝</title>
 <link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1602939793526">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="关于" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="[Code] Contest S 201017" />
+    <meta name="keywords" content="201017,Contest - S,Code,Contest,S" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -190,14 +190,10 @@
               <div class="toc-box right-motion">
   <div class="toc-wrapper auto-number auto" id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
-</ul>
-</li>
+<li><a href="#a-div">A - div</a></li>
+<li><a href="#b-saying">B - saying</a></li>
+<li><a href="#c-market">C - market</a></li>
+<li><a href="#d-slope">D - slope</a></li>
 </ul>
 
   </div>
@@ -450,8 +446,8 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://9u46-mx.github.io/post/about/">
-      关于
+    <a class="post-title-link" href="https://9u46-mx.github.io/post/Code-201017/">
+      [Code] Contest S 201017
     </a>
   </h1>
   <div class="post-meta">
@@ -459,30 +455,282 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-01-25</span>
+      <span>2020-10-17</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://9u46-mx.github.io/tag/33iWkpSUn/">
+              <span>201017</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/2Vqf-vtyW/">
+              <span>Contest - S</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/95wY7izri/">
+              <span>Code</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/gD4avKtQ_/">
+              <span>Contest</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/PdoliQ-Rlk/">
+              <span>S</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>9分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>31<span class="pc-show">字数</span></span>
+      <span>1430<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                <h1 id="a-div">A - div</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# include &lt;map&gt;
+# define fo(file) (freopen(file&quot;.in&quot;, &quot;r&quot;, stdin), freopen(file&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc()     (fclose (                stdin), fclose (                 stdout))
+
+namespace Main {
+    namespace Sourse {
+        typedef short unsigned int hu;
+        typedef unsigned int uint;
+        typedef std::map&lt;uint, hu&gt; map;
+    }
+    using namespace Sourse;
+    enum { M = 200 };
+    static hu m;
+    static uint n;
+    static map mp;
+    static uint cnt[M + 1];
+    static inline const void solve() {
+        static uint a; scanf(&quot;%u&quot;, &amp;a);
+        for (register uint i(1); 1u * i * i &lt;= a; ++i) {
+            if (not(a % i)) {
+                if (i &lt;= n) ++mp[i];
+                if (1u * i * i &lt; a and a / i &lt;= n) ++mp[a / i];
+            }
+        }
+    }
+    static inline const void main() {
+        fo(&quot;div&quot;);
+        scanf(&quot;%u%hu&quot;, &amp;n, &amp;m);
+        for (hu i(0); i &lt; m; ++i) solve();
+        cnt[0] = n - mp.size();
+        for (register map::iterator i(mp.begin()); i not_eq mp.end(); ++i) ++cnt[(*i).second];
+        for (hu i(0); i &lt;= m; ++i) printf(&quot;%u\n&quot;, cnt[i]);
+        fc();
+    }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="b-saying">B - saying</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# define fo(file) (freopen(file&quot;.in&quot;, &quot;r&quot;, stdin), freopen(file&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc()     (fclose (                stdin), fclose (                 stdout))
+# include &lt;cstdio&gt;
+
+namespace Main {
+    namespace Sourse {
+        typedef unsigned int uint;
+        typedef long long unsigned int llu;
+        static inline const uint max(const uint a, const uint b) { return a &lt; b ? b : a; }
+        template&lt;const uint size&gt;
+        class segment_tree {
+            uint* tree;
+            static inline const uint middle(const uint l, const uint r) { return (l + r) / 2; }
+            static inline const uint ld(const uint x) { return x &lt;&lt; 1 bitor 0; }
+            static inline const uint rd(const uint x) { return x &lt;&lt; 1 bitor 1; }
+            inline const void upto(const uint x, const uint l, const uint r) {
+                const uint m(middle(l, r)); tree[x] = 0;
+                if (l &lt;= m and tree[ld(x)] &gt; tree[x]) tree[x] = tree[ld(x)];
+                if (r &gt;  m and tree[rd(x)] &gt; tree[x]) tree[x] = tree[rd(x)];
+            }
+        public:
+            segment_tree() { tree = new uint [size * 4] - 1; }
+            compl segment_tree() { delete[](tree + 1), tree = NULL; }
+            inline const void build(const uint key, const uint x = 1, const uint l = 1, const uint r = size) {
+                tree[x] = key;
+                if (l == r) return;
+                const uint m(middle(l, r));
+                if (l &lt;= m) build(key, ld(x), l    , m);
+                if (r &gt;  m) build(key, rd(x), m + 1, r);
+            }
+            inline const uint query(const uint key, const uint x = 1, const uint l = 1, const uint r = size) {
+                if (tree[x] &lt; key) return compl 0u;
+                if (l == r) return l;
+                const uint m(middle(l, r));
+                if (l &lt;= m and tree[ld(x)] &gt;= key) return query(key, ld(x), l    , m);
+                if (r &gt;  m and tree[rd(x)] &gt;= key) return query(key, rd(x), m + 1, r);
+                return ~0u - 1;
+            }
+            inline const void modify(const uint tar, const uint delta, const uint x = 1, const uint l = 1, const uint r = size) {
+                if (l == r) return (const void)(tree[x] -= delta);
+                const uint m(middle(l, r));
+                if (tar &lt;= m) modify(tar, delta, ld(x), l    , m);
+                if (tar &gt;  m) modify(tar, delta, rd(x), m + 1, r);
+                upto(x, l, r);
+            }
+        };
+    }
+    using namespace Sourse;
+    enum { N = 200000 };
+    static uint a, b, n;
+    static segment_tree&lt;N&gt; tree;
+    static inline const void solve() {
+        static llu w; scanf(&quot;%llu&quot;, &amp;w);
+        if (w &gt; b) return (const void)puts(&quot;-1&quot;);
+        const uint p(tree.query(w));
+        // printf(&quot;%u &quot;, p);
+        if (p &gt; a) return (const void)puts(&quot;-1&quot;);
+        printf(&quot;%u\n&quot;, p), tree.modify(p, w);
+    }
+    static inline const void main() {
+        fo(&quot;saying&quot;);
+        scanf(&quot;%u%u%u&quot;, &amp;a, &amp;b, &amp;n), tree.build(b);
+        for (register uint i(0); i &lt; n; ++i) solve();
+        fc();
+    }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="c-market">C - market</h1>
+<pre><code class="language-cpp"># define CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# include &lt;cstring&gt;
+# include &lt;algorithm&gt;
+# define fo(file) (freopen(file&quot;.in&quot;, &quot;r&quot;, stdin), freopen(file&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc(file) (fclose (                stdin), fclose (                 stdout))
+
+namespace Main {
+    namespace Sourse {
+        typedef short unsigned int hu;
+        typedef unsigned int uint;
+        using std::sort;
+        static inline const uint min(const uint a, const uint b) { return b &lt; a ? b : a; }
+    }
+    using namespace Sourse;
+    enum { N = 300, V = 300 };
+    struct market {
+        uint c;
+        hu v;
+        hu t;
+        market() : c(), v(), t(0) {}
+        inline const void read() { scanf(&quot;%u%hu%hu&quot;, &amp;c, &amp;v, &amp;t); }
+        friend inline const bool operator&lt;(const market&amp; a, const market&amp; b) { return a.t &lt; b.t; }
+    };
+    static hu n;
+    static market a[N + 1];
+    static uint m;
+    static uint f[N + 1][V * N + 1];
+    static inline const void init(const hu x) {
+        for (hu i(0); i &lt; a[x].v; ++i) f[x][i] = min(f[x - 1][i], a[x].c);
+        for (register uint i(a[x].v); i &lt;= 1u * V * n; ++i) f[x][i] = min(f[x - 1][i], f[x - 1][i - a[x].v] + a[x].c);
+    }
+    static inline const void solve() {
+        static hu t; static uint m; scanf(&quot;%hu%u&quot;, &amp;t, &amp;m);
+        uint l(0), r(n + 1);
+        while (r - l &gt; 1) (a[(l + r) / 2].t &lt;= t ? l : r) = (l + r) / 2;
+        const hu x(l); l = 0, r = V * n + 1;
+        while (r - l &gt; 1) (f[x][(l + r) / 2] &lt;= m ? l : r) = (l + r) / 2;
+        printf(&quot;%u\n&quot;, l);
+    }
+    static inline const void main() {
+        memset(f[0], 0x7f, sizeof f[0]), f[0][0] = 0;
+        fo(&quot;market&quot;);
+        scanf(&quot;%hu%u&quot;, &amp;n, &amp;m);
+        for (hu i(1); i &lt;= n; ++i) a[i].read();
+        std::sort(&amp;a[0], &amp;a[n] + 1);
+        for (hu i(1); i &lt;= n; ++i) init(i);
+        for (register uint i(0); i &lt; m; ++i) solve();
+        fc();
+    }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="d-slope">D - slope</h1>
+<pre><code class="language-cpp"># define CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# include &lt;cstring&gt;
+# include &lt;algorithm&gt;
+# define fo(file) (freopen(file&quot;.in&quot;, &quot;r&quot;, stdin), freopen(file&quot;.out&quot;, &quot;w&quot;, stdout))
+# define fc(file) (fclose (                stdin), fclose (                 stdout))
+
+namespace Main {
+    namespace Sourse {
+        typedef short unsigned int hu;
+        typedef unsigned int uint;
+        using std::sort;
+        static inline const uint min(const uint a, const uint b) { return b &lt; a ? b : a; }
+    }
+    using namespace Sourse;
+    enum { N = 300, V = 300 };
+    struct market {
+        uint c;
+        hu v;
+        hu t;
+        market() : c(), v(), t(0) {}
+        inline const void read() { scanf(&quot;%u%hu%hu&quot;, &amp;c, &amp;v, &amp;t); }
+        friend inline const bool operator&lt;(const market&amp; a, const market&amp; b) { return a.t &lt; b.t; }
+    };
+    static hu n;
+    static market a[N + 1];
+    static uint m;
+    static uint f[N + 1][V * N + 1];
+    static inline const void init(const hu x) {
+        for (hu i(0); i &lt; a[x].v; ++i) f[x][i] = min(f[x - 1][i], a[x].c);
+        for (register uint i(a[x].v); i &lt;= 1u * V * n; ++i) f[x][i] = min(f[x - 1][i], f[x - 1][i - a[x].v] + a[x].c);
+    }
+    static inline const void solve() {
+        static hu t; static uint m; scanf(&quot;%hu%u&quot;, &amp;t, &amp;m);
+        uint l(0), r(n + 1);
+        while (r - l &gt; 1) (a[(l + r) / 2].t &lt;= t ? l : r) = (l + r) / 2;
+        const hu x(l); l = 0, r = V * n + 1;
+        while (r - l &gt; 1) (f[x][(l + r) / 2] &lt;= m ? l : r) = (l + r) / 2;
+        printf(&quot;%u\n&quot;, l);
+    }
+    static inline const void main() {
+        memset(f[0], 0x7f, sizeof f[0]), f[0][0] = 0;
+        fo(&quot;market&quot;);
+        scanf(&quot;%hu%u&quot;, &amp;n, &amp;m);
+        for (hu i(1); i &lt;= n; ++i) a[i].read();
+        std::sort(&amp;a[0], &amp;a[n] + 1);
+        for (hu i(1); i &lt;= n; ++i) init(i);
+        for (register uint i(0); i &lt; m; ++i) solve();
+        fc();
+    }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
 
               </div>
               <div class="post-footer">
@@ -493,7 +741,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://9u46-mx.github.io/post/about/" title="关于">关于</a>
+      <a href="https://9u46-mx.github.io/post/Code-201017/" title="[Code] Contest S 201017">[Code] Contest S 201017</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -501,6 +749,16 @@ window.addEventListener('load', function() {
     </li>
   </ul>
   <div class="tags">
+    
+      <a href="https://9u46-mx.github.io/tag/33iWkpSUn/"># 201017</a>
+    
+      <a href="https://9u46-mx.github.io/tag/2Vqf-vtyW/"># Contest - S</a>
+    
+      <a href="https://9u46-mx.github.io/tag/95wY7izri/"># Code</a>
+    
+      <a href="https://9u46-mx.github.io/tag/gD4avKtQ_/"># Contest</a>
+    
+      <a href="https://9u46-mx.github.io/tag/PdoliQ-Rlk/"># S</a>
     
   </div>
   <div class="nav">
