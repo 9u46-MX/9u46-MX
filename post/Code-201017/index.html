@@ -7,7 +7,7 @@
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
 <title>[Code] Contest S 201017 | 9u46 的小窝</title>
-<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1602939793526">
+<link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1603000479187">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
 <link rel="stylesheet" href="/media/css/pisces.css">
@@ -503,7 +503,7 @@ window.addEventListener('load', function() {
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>1430<span class="pc-show">字数</span></span>
+      <span>1315<span class="pc-show">字数</span></span>
     </span>
     
   </div>
@@ -677,54 +677,40 @@ namespace Main {
 signed int main() { Main::main(); return 0; }
 </code></pre>
 <h1 id="d-slope">D - slope</h1>
-<pre><code class="language-cpp"># define CRT_SECURE_NO_WARNINGS
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
 # include &lt;cstdio&gt;
-# include &lt;cstring&gt;
 # include &lt;algorithm&gt;
 # define fo(file) (freopen(file&quot;.in&quot;, &quot;r&quot;, stdin), freopen(file&quot;.out&quot;, &quot;w&quot;, stdout))
-# define fc(file) (fclose (                stdin), fclose (                 stdout))
+# define fc()     (fclose (                stdin), fclose (                 stdout))
 
 namespace Main {
     namespace Sourse {
-        typedef short unsigned int hu;
         typedef unsigned int uint;
+        typedef double lf;
+        typedef const lf clf;
         using std::sort;
-        static inline const uint min(const uint a, const uint b) { return b &lt; a ? b : a; }
+        static inline const lf max(const lf a, const lf b) { return a &lt; b ? b : a; }
+        static inline const void amax(lf&amp; a, const lf b) { a = max(a, b); }
+        struct point {
+            uint x, y;
+            inline const void read() { scanf(&quot;%u%u&quot;, &amp;x, &amp;y); }
+            friend inline const lf slope(const point&amp; a, const point&amp; b) { return ((clf)b.y - (clf)a.y) / ((clf)b.x - (clf)a.x); }
+            friend inline const bool operator&lt;(const point&amp; a, const point&amp; b) { return a.x &lt; b.x; }
+        };
+        inline const lf slope(const point&amp;, const point&amp;);
     }
     using namespace Sourse;
-    enum { N = 300, V = 300 };
-    struct market {
-        uint c;
-        hu v;
-        hu t;
-        market() : c(), v(), t(0) {}
-        inline const void read() { scanf(&quot;%u%hu%hu&quot;, &amp;c, &amp;v, &amp;t); }
-        friend inline const bool operator&lt;(const market&amp; a, const market&amp; b) { return a.t &lt; b.t; }
-    };
-    static hu n;
-    static market a[N + 1];
-    static uint m;
-    static uint f[N + 1][V * N + 1];
-    static inline const void init(const hu x) {
-        for (hu i(0); i &lt; a[x].v; ++i) f[x][i] = min(f[x - 1][i], a[x].c);
-        for (register uint i(a[x].v); i &lt;= 1u * V * n; ++i) f[x][i] = min(f[x - 1][i], f[x - 1][i - a[x].v] + a[x].c);
-    }
-    static inline const void solve() {
-        static hu t; static uint m; scanf(&quot;%hu%u&quot;, &amp;t, &amp;m);
-        uint l(0), r(n + 1);
-        while (r - l &gt; 1) (a[(l + r) / 2].t &lt;= t ? l : r) = (l + r) / 2;
-        const hu x(l); l = 0, r = V * n + 1;
-        while (r - l &gt; 1) (f[x][(l + r) / 2] &lt;= m ? l : r) = (l + r) / 2;
-        printf(&quot;%u\n&quot;, l);
-    }
+    enum { N = (const uint)5e5, Y = (const uint)1e7 };
+    static uint n;
+    static point p[N];
+    static lf ans(-Y);
     static inline const void main() {
-        memset(f[0], 0x7f, sizeof f[0]), f[0][0] = 0;
-        fo(&quot;market&quot;);
-        scanf(&quot;%hu%u&quot;, &amp;n, &amp;m);
-        for (hu i(1); i &lt;= n; ++i) a[i].read();
-        std::sort(&amp;a[0], &amp;a[n] + 1);
-        for (hu i(1); i &lt;= n; ++i) init(i);
-        for (register uint i(0); i &lt; m; ++i) solve();
+        fo(&quot;slope&quot;);
+        scanf(&quot;%u&quot;, &amp;n);
+        for (register uint i(0); i &lt; n; ++i) p[i].read();
+        sort(&amp;p[0], &amp;p[n]);
+        for (register uint i(1); i &lt; n; ++i) amax(ans, slope(p[i - 1], p[i]));
+        printf(&quot;%.3lf\n&quot;, ans);
         fc();
     }
 }
