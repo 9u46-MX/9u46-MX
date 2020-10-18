@@ -6,7 +6,7 @@
 <meta name="keywords" content="Gridea静态个人博客">
 <meta name="description" content="by 9u46.">
 <meta name="theme-color" content="#000">
-<title>关于 | 9u46 的小窝</title>
+<title>[Code][24OI] Contest S 201028 | 9u46 的小窝</title>
 <link rel="shortcut icon" href="https://9u46-mx.github.io//favicon.ico?v=1603029508857">
 <link rel="stylesheet" href="https://9u46-mx.github.io//styles/main.css">
 
@@ -25,8 +25,8 @@
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
     onload="renderMathInElement(document.body);"></script>
 
-    <meta name="description" content="关于" />
-    <meta name="keywords" content="" />
+    <meta name="description" content="[Code][24OI] Contest S 201028" />
+    <meta name="keywords" content="Contest - S,Code,Contest,S,24OI,2020" />
   </head>
   <body>
     <div class="head-top-line"></div>
@@ -190,14 +190,10 @@
               <div class="toc-box right-motion">
   <div class="toc-wrapper auto-number auto" id="toc_wrapper">
     <ul class="markdownIt-TOC">
-<li>
-<ul>
-<li><a href="#%E5%85%B3%E4%BA%8E%E6%9C%AC%E7%AB%99">🏠 关于本站</a></li>
-<li><a href="#%E5%8D%9A%E4%B8%BB%E6%98%AF%E8%B0%81">👨‍💻 博主是谁</a></li>
-<li><a href="#%E5%85%B4%E8%B6%A3%E7%88%B1%E5%A5%BD">⛹ 兴趣爱好</a></li>
-<li><a href="#%E8%81%94%E7%B3%BB%E6%88%91%E5%91%80">📬 联系我呀</a></li>
-</ul>
-</li>
+<li><a href="#a-shiki">A - shiki</a></li>
+<li><a href="#b-pokemon">B - pokemon</a></li>
+<li><a href="#c-matrix">C - matrix</a></li>
+<li><a href="#d-multiplication">D - multiplication</a></li>
 </ul>
 
   </div>
@@ -450,8 +446,8 @@ window.addEventListener('load', function() {
             <div class="section bg-color post post-page">
               <header class="post-header">
   <h1 class="post-title">
-    <a class="post-title-link" href="https://9u46-mx.github.io/post/about/">
-      关于
+    <a class="post-title-link" href="https://9u46-mx.github.io/post/Code-201018/">
+      [Code][24OI] Contest S 201028
     </a>
   </h1>
   <div class="post-meta">
@@ -459,30 +455,354 @@ window.addEventListener('load', function() {
     <span class="meta-item pc-show">
       <i class="fa fa-calendar-o"></i>
       <span>发布于</span>
-      <span>2019-01-25</span>
+      <span>2020-10-18</span>
       <span class="post-meta-divider pc-show">|</span>
     </span>
     
+      <span class="meta-item">
+        <i class="fa fa-folder-o"></i>
+        <span class="pc-show">分类于</span>
+        
+          
+            <a href="https://9u46-mx.github.io/tag/2Vqf-vtyW/">
+              <span>Contest - S</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/95wY7izri/">
+              <span>Code</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/gD4avKtQ_/">
+              <span>Contest</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/PdoliQ-Rlk/">
+              <span>S</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/SmOcZqtSZC/">
+              <span>24OI</span>
+            </a>、
+          
+        
+          
+            <a href="https://9u46-mx.github.io/tag/3no_pV6kT5/">
+              <span>2020</span>
+            </a>
+          
+        
+      </span>
+      <span class="post-meta-divider">|</span>
+    
     <span class="meta-item">
       <i class="fa fa-clock-o"></i>
-      <span>1分钟</span>
+      <span>12分钟</span>
     </span>
     <span class="meta-item">
       <span class="post-meta-divider">|</span>
       <i class="fa fa-file-word-o"></i>
-      <span>31<span class="pc-show">字数</span></span>
+      <span>1795<span class="pc-show">字数</span></span>
     </span>
     
   </div>
 </header>
               <div class="post-body next-md-body" id="post_body">
-                <blockquote>
-<p>欢迎来到我的小站呀，很高兴遇见你！🤝</p>
-</blockquote>
-<h2 id="关于本站">🏠 关于本站</h2>
-<h2 id="博主是谁">👨‍💻 博主是谁</h2>
-<h2 id="兴趣爱好">⛹ 兴趣爱好</h2>
-<h2 id="联系我呀">📬 联系我呀</h2>
+                <h1 id="a-shiki">A - shiki</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cctype&gt;
+# include &lt;cstdio&gt;
+# include &lt;cstring&gt;
+
+namespace Main {
+	namespace Sourse {
+		typedef long long signed int lld;
+		typedef unsigned int uint;
+		typedef long long unsigned int llu;
+		static inline char getc() {
+			char t;
+			while (isspace(t = getchar()));
+			return t;
+		}
+		static inline const void gets(char* s) {
+			char t;
+			while (isspace(t = getchar()));
+			while (*s++ = t, islower(t = getchar()));
+		}
+		static inline uint read() {
+			char t;
+			while (isspace(t = getchar()));
+			uint r(0);
+			while (r = r * 10 + (t - '0'), isdigit(t = getchar()));
+			return r;
+		}
+		static inline const void read(uint&amp; a) { a = read(); }
+		static inline const lld max(const lld a, const lld b) { return a &lt; b ? b : a; }
+		static inline const void amax(lld&amp; a, const lld b) { a = max(a, b); }
+	}
+	using namespace Sourse;
+	enum { N = (const uint)1e5, M = (const uint)1e5 };
+	static uint m, n;
+	static llu l['z' + 1]['z' + 1];
+	static char s[N + 1];
+	static lld f[N + 1]['z' + 1];
+	static inline const void begin() {
+		freopen(&quot;shiki.in&quot;, &quot;r&quot;, stdin), freopen(&quot;shiki.out&quot;, &quot;w&quot;, stdout);
+		read(n), gets(s), read(m);
+		for (register uint i(0); i &lt; m; ++i) {
+			const char t(getc()), u(getc()); const uint k(read());
+			l[t][u] += k;
+		}
+	}
+	static inline const void end() {
+		printf(&quot;%llu\n&quot;, f[n][0]);
+		fclose(stdin), fclose(stdout);
+	}
+	static inline const void solve() {
+		memset(f, 0x80, sizeof f), f[0][s[0]] = 0;
+		for (register uint i(1); i &lt;= n; ++i) {
+			for (register uint j('a'); j &lt;= 'z'; ++j) f[i][j] = f[i - 1][j];
+			f[i][0] = f[i - 1][0];
+			for (register uint j('a'); j &lt;= 'z'; ++j) amax(f[i][s[i]], f[i - 1][j] + l[j][s[i]]);
+			f[i][s[i]] = max(f[i][s[i]], f[i - 1][0] + l[0][s[i]]);
+		}
+	}
+	static inline const void main() {
+		begin();
+		solve();
+		end();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="b-pokemon">B - pokemon</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNIGNS
+# include &lt;cctype&gt;
+# include &lt;cstdio&gt;
+
+namespace Main {
+	namespace Sourse {
+		typedef short signed int hd;
+		typedef short unsigned int hu;
+		typedef unsigned int uint;
+		static inline char getc() { char t; while (isspace(t = getchar())); return t; }
+		static inline uint read() {
+			char t;
+			while (isspace(t = getchar()));
+			uint r(0);
+			while (r = r * 10 + (t - '0'), isdigit(t = getchar()));
+			return r;
+		}
+		static inline const void read(uint&amp; a) { a = read(); }
+		static inline const void write(uint a) {
+			if (not a) return (const void)puts(&quot;0&quot;);
+			uint t(1);
+			while (t &lt;= a) t *= 10;
+			while (t /= 10) putchar(a / t % 10 + '0');
+			putchar('\n');
+		}
+		static inline const uint min(const uint a, const uint b) { return b &lt; a ? b : a; }
+		static inline const void amin(uint&amp; a, const uint b) { a = min(a, b); }
+	}
+	using namespace Sourse;
+	enum { N = (const uint)5e5, M = (const uint)5e5, NM = (const uint)5e5 };
+	enum { N2M2 = NM + N * 2 + M * 2 + 4 };
+	static const hd d[4][2]{ { -1, 0 }, { 0, -1 }, { 1, 0 }, { 0, 1 } };
+	static uint n, m;
+	static bool _map[N2M2];
+	static uint q;
+	static uint _dis[N2M2 * 4];
+	static bool _vis[N2M2 * 4];
+	static uint sx, sy;
+	static hu sd;
+	static uint step;
+	static inline const hu hash(const char d)
+	{ switch (d) { case 'U': return 0; case 'D': return 2; case 'L': return 1; case 'R': return 3; } }
+	static inline const uint hash(const uint x, const uint y) { return x * (m + 2) + y; }
+	static inline const uint hashd(const uint x, const uint y, const hu d) { return hash(x, y) * 4 + d; }
+	static inline bool&amp; map(const uint x, const uint y) { return _map[hash(x, y)]; }
+	static inline uint&amp; dis(const uint x, const uint y, const hu d) { return _dis[hashd(x, y, d)]; }
+	static inline bool&amp; vis(const uint x, const uint y, const hu d) { return _vis[hashd(x, y, d)]; }
+	static inline const void correct(const uint x, const uint y, hu&amp; dir) {
+		for (register hu i(0); i &lt; 4; ++i)
+			if (map(x + d[(dir + i + 3) % 4][0], y + d[(dir + i + 3) % 4][1]))
+				return (const void)(dir = (dir + i + 3) % 4);
+	}
+	static inline const void move(uint&amp; x, uint&amp; y, hu&amp; dir) { x += d[dir][0], y += d[dir][1], correct(x, y, dir); }
+	static inline const void search() {
+		static uint x, y;
+		for (x = 1, y = 1; !map(x, y); y &lt;= m ? ++y : (++x, y = 0));
+		static hu d(0); correct(x, y, d);
+		sx = x, sy = y, sd = d;
+		while (vis(x, y, d) = true, dis(x, y, d) = ++step, move(x, y, d), x != sx or y != sy or d != sd);
+	}
+	static inline const void begin() {
+		freopen(&quot;pokemon.in&quot;, &quot;r&quot;, stdin), freopen(&quot;pokemon.out&quot;, &quot;w&quot;, stdout);
+		read(n), read(m);
+		for (uint i(1); i &lt;= n; ++i) for (uint j(1); j &lt;= m; ++j) map(i, j) = getc() == '.';
+		search();
+	}
+	static inline const void end() {
+		fclose(stdin), fclose(stdout);
+	}
+	static inline const void solve() {
+		const uint ax(read()), ay(read()), bx(read()), by(read());
+		const hu dir(hash(getc()));
+		uint ans(compl 0u);
+		for (hu i(0); i &lt; 4; ++i) if (vis(bx, by, i)) amin(ans, (dis(bx, by, i) + step - dis(ax, ay, dir)) % step);
+		write(ans);
+	}
+	static inline const void main() {
+		begin();
+		read(q);
+		for (register uint i(0); i &lt; q; ++i) solve();
+		end();
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="c-matrix">C - matrix</h1>
+<pre><code class="language-cpp"># define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# include &lt;cstring&gt;
+
+namespace Main {
+	namespace Sourse {
+		typedef short signed int hd;
+		typedef short unsigned int hu;
+		typedef unsigned int uint;
+		static inline const hu max(const hu a, const hu b) { return a &lt; b ? b : a; }
+		static inline const void amax(hu&amp; a, const hu b) { a = max(a, b); }
+	}
+	using namespace Sourse;
+	enum { NM = 40000, N = NM, M = NM, A = 40000 };
+	static const hd d[4][2]{ { -1, 0 }, { 0, -1 }, { 0, 1 }, { 1, 0 } };
+	static hu n, m;
+	static hu _mat[NM + N + M + 4];
+	static hu _ans[NM + N + M + 4];
+	static hu k;
+	static hu res(1);
+	static inline const uint hash(const hu x, const hu y) { return x * (m + 2) + y; }
+	static inline hu&amp; mat(const hu x, const hu y) { return _mat[hash(x, y)]; }
+	static inline hu&amp; ans(const hu x, const hu y) { return _ans[hash(x, y)]; }
+	static inline const hu search(const hu x, const hu y) {
+		if (ans(x, y)) return ans(x, y);
+		ans(x, y) = 1;
+		for (hu i(0); i &lt; 4; ++i)
+			if (mat(x + d[i][0], y + d[i][1]) == 1u * mat(x, y) * k)
+				amax(ans(x, y), search(x + d[i][0], y + d[i][1]) + 1);
+		return ans(x, y);
+	}
+	static inline const void main() {
+		freopen(&quot;matrix.in&quot;, &quot;r&quot;, stdin), freopen(&quot;matrix.out&quot;, &quot;w&quot;, stdout);
+		scanf(&quot;%hu%hu&quot;, &amp;n, &amp;m);
+		bool f(false);
+		if (!n or !m) { puts(&quot;0&quot;); goto end; }
+		for (hu i(1); i &lt;= n; ++i) for (hu j(1); j &lt;= m; ++j) scanf(&quot;%hu&quot;, &amp;mat(i, j));
+		for (hu i(1); i &lt;= n; ++i) for (hu j(2); j &lt;= m; ++j) f = f || mat(i, j) == mat(i, j - 1);
+		for (hu i(2); i &lt;= n; ++i) for (hu j(1); j &lt;= m; ++j) f = f || mat(i, j) == mat(i - 1, j);
+		if (f) { puts(&quot;-1&quot;); goto end; }
+		for (hu i(1); i &lt;= n; ++i) for (hu j(2); j &lt;= m; ++j) if (not(mat(i, j) % mat(i, j - 1))) res = 2;
+		for (hu i(1); i &lt;= n; ++i) for (hu j(2); j &lt;= m; ++j) if (not(mat(i, j - 1) % mat(i, j))) res = 2;
+		for (hu i(2); i &lt;= n; ++i) for (hu j(1); j &lt;= m; ++j) if (not(mat(i, j) % mat(i - 1, j))) res = 2;
+		for (hu i(2); i &lt;= n; ++i) for (hu j(1); j &lt;= m; ++j) if (not(mat(i - 1, j) % mat(i, j))) res = 2;
+		for (hu i(2); 1u * i * i &lt;= A; ++i) {
+			memset(_ans, 0, sizeof _ans);
+			k = i;
+			for (hu i(1); i &lt;= n; ++i) for (hu j(1); j &lt;= m; ++j) amax(res, search(i, j));
+		}
+		printf(&quot;%hu\n&quot;, res);
+	end:fclose(stdin), fclose(stdout);
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<h1 id="d-multiplication">D - multiplication</h1>
+<pre><code class="language-cpp">// for table
+# define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+
+namespace Main {
+    namespace Sourse {
+        typedef unsigned int uint;
+        typedef long long unsigned int llu;
+    }
+    using namespace Sourse;
+    enum { N = (const uint)1e9, L = (const uint)1e5 };
+    static llu fact(1);
+    static inline const void main() {
+        freopen(&quot;temp.txt&quot;, &quot;w&quot;, stdout);
+        printf(&quot;%llu&quot;, fact);
+        for (register uint i(1); i &lt;= N; ++i) {
+            uint t(i);
+            while (not(t bitand 1)) t &gt;&gt;= 1;
+            fact *= t;
+            if (not(i % L)) printf(&quot;, %lluull&quot;, fact);
+        }
+        fclose(stdout);
+    }
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
+<pre><code class="language-cpp">// multiplication.cpp
+# define _CRT_SECURE_NO_WARNINGS
+# include &lt;cstdio&gt;
+# include &lt;map&gt;
+# include &lt;vector&gt;
+
+namespace Main {
+	namespace Sourse {
+		typedef short unsigned int hu;
+		typedef unsigned int uint;
+		typedef long long unsigned llu;
+		typedef std::vector&lt;llu&gt; vector;
+		typedef std::map&lt;llu, vector&gt; map;
+		static inline const void putc(const hu x) { putchar(x &lt; 10 ? x + '0' : x - 10 + 'A'); }
+		static inline const void write(llu a) {
+			if (not a) return (const void)puts(&quot;0&quot;);
+			hu t(60);
+			while (not(a &gt;&gt; t)) t -= 4;
+			while (putc(a &gt;&gt; t bitand 0xF), (t -= 4) &lt; 64);
+			putchar('\n');
+		}
+	}
+	using namespace Sourse;
+	enum { N = (const uint)1e9 };
+	static hu t;
+	static llu ft[N / 100000 + 1]{ ... }; // table
+	static inline const void solve() {
+		static uint n; scanf(&quot;%u&quot;, &amp;n);
+		llu fact(ft[n / 100000]);
+		for (uint i(n - n % 100000 + 1); i &lt;= n; ++i) {
+			uint t(i);
+			while (not(t &amp; 1)) t &gt;&gt;= 1;
+			fact *= t;
+		}
+		llu cnt(0);
+		for (uint pow(2); pow &lt;= n; pow &lt;&lt;= 1) cnt += n / pow;
+		write(fact &lt;&lt; (cnt % 4));
+	}
+	static inline const void main() {
+		freopen(&quot;multiplication.in&quot;, &quot;r&quot;, stdin), freopen(&quot;multiplication.out&quot;, &quot;w&quot;, stdout);
+		scanf(&quot;%hu&quot;, &amp;t);
+		for (hu i(0); i &lt; t; ++i) solve();
+		fclose(stdin), fclose(stdout);
+	}
+}
+
+signed int main() { Main::main(); return 0; }
+</code></pre>
 
               </div>
               <div class="post-footer">
@@ -493,7 +813,7 @@ window.addEventListener('load', function() {
     </li>
     <li class="post-copyright-link">
       <strong>本文链接：</strong>
-      <a href="https://9u46-mx.github.io/post/about/" title="关于">关于</a>
+      <a href="https://9u46-mx.github.io/post/Code-201018/" title="[Code][24OI] Contest S 201028">[Code][24OI] Contest S 201028</a>
     </li>
     <li class="post-copyright-license">
       <strong>版权声明： </strong>
@@ -501,6 +821,18 @@ window.addEventListener('load', function() {
     </li>
   </ul>
   <div class="tags">
+    
+      <a href="https://9u46-mx.github.io/tag/2Vqf-vtyW/"># Contest - S</a>
+    
+      <a href="https://9u46-mx.github.io/tag/95wY7izri/"># Code</a>
+    
+      <a href="https://9u46-mx.github.io/tag/gD4avKtQ_/"># Contest</a>
+    
+      <a href="https://9u46-mx.github.io/tag/PdoliQ-Rlk/"># S</a>
+    
+      <a href="https://9u46-mx.github.io/tag/SmOcZqtSZC/"># 24OI</a>
+    
+      <a href="https://9u46-mx.github.io/tag/3no_pV6kT5/"># 2020</a>
     
   </div>
   <div class="nav">
